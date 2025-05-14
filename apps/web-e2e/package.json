@@ -1,10 +1,10 @@
 {
-  "name": "@lmsrepo/backend-lms-e2e",
+  "name": "@lmsrepo/web-e2e",
   "version": "0.0.1",
   "private": true,
   "nx": {
     "implicitDependencies": [
-      "@lmsrepo/backend-lms"
+      "@lmsrepo/web"
     ]
   }
 }

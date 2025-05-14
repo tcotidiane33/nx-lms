@@ -1,7 +1,7 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "outDir": "out-tsc/@lmsrepo/backend-lms-e2e",
+    "outDir": "out-tsc/@lmsrepo/api-e2e",
     "esModuleInterop": true,
     "noUnusedLocals": false,
     "noImplicitAny": false
@@ -10,9 +10,5 @@
     "jest.config.ts",
     "src/**/*.ts"
   ],
-  "references": [
-    {
-      "path": "./tsconfig.e2e.json"
-    }
-  ]
+  "references": []
 }
