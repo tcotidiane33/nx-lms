@@ -3,6 +3,7 @@
   "compileOnSave": false,
   "files": [],
   "references": [
+    
     {
       "path": "./apps/api-e2e"
     },
@@ -14,24 +15,6 @@
     },
     {
       "path": "./apps/web"
-    },
-    {
-      "path": "./libs/shared"
-    },
-    {
-      "path": "./libs/ui"
-    },
-    {
-      "path": "./libs/utils"
-    },
-    {
-      "path": "./libs/cli"
-    },
-    {
-      "path": "./libs/config"
-    },
-    {
-      "path": "./libs/db"
     }
   ]
 }

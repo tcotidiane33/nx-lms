@@ -32,6 +32,9 @@
     },
     {
       "path": "./libs/db"
+    },
+    {
+      "path": "./libs/cli-e2e"
     }
   ]
 }
