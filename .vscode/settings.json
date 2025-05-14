@@ -1,0 +1,7 @@
+{
+    "nxConsole.generateAiAgentRules": true,
+    "emmet.excludeLanguages": [
+        "xsl",
+        "xslt"
+    ]
+}
