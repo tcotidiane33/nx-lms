@@ -81,3 +81,24 @@ And join the Nx community:
 - [Our Youtube channel](https://www.youtube.com/@nxdevtools)
 - [Our blog](https://nx.dev/blog?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
 # nx-lms
+
+
+
+## Key Features
+
+- **Browse & Filter Courses**: Easily explore and discover courses tailored to your interests.
+- **Purchase Courses using Stripe**: Seamlessly complete transactions with secure payment processing via Stripe.
+- **Mark Chapters as Completed or Uncompleted**: Track your progress within each course.
+- **Progress Calculation**: Monitor your progress with detailed statistics for each course.
+- **Student Dashboard**: Access a personalized dashboard to manage your courses and track your learning journey.
+- **Teacher Mode**: Empower educators with tools to create, manage, and monitor courses.
+- **Create New Courses**: Effortlessly create new courses with customizable settings.
+- **Create New Chapters**: Structure course content by adding chapters and organizing them efficiently.
+- **Drag n’ Drop Reordering**: Easily rearrange chapter positions using intuitive drag and drop functionality.
+- **Multimedia Support**: Upload thumbnails, attachments, and videos seamlessly with UploadThing.
+- **Video Processing**: Enhance video content with Mux for optimized playback.
+- **HLS Video Player**: Enjoy high-quality video streaming with Mux's HLS video player.
+- **Rich Text Editor**: Create engaging chapter descriptions with a user-friendly rich text editor.
+- **Authentication**: Ensure secure access with authentication powered by Clerk.
+- **ORM**: Utilize Prisma for efficient and type-safe database access.
+- **Database**: Benefit from MySQL database management with Aiven.

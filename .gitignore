@@ -47,3 +47,10 @@ test-output
 
 .cursor/rules/nx-rules.mdc
 .github/instructions/nx.instructions.md
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
