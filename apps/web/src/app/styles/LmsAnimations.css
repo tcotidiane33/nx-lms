@@ -1,0 +1,147 @@
+/* Animations de base */
+[data-aos] {
+    opacity: 0;
+    transition: all 0.8s ease;
+}
+
+[data-aos="fade-down"] {
+    transform: translateY(-20px);
+}
+
+[data-aos="fade-up"] {
+    transform: translateY(20px);
+}
+
+[data-aos="zoom-in"] {
+    transform: scale(0.9);
+}
+
+[data-aos].animate {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Statistiques */
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 3rem 0;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 1.5rem;
+    border-radius: 8px;
+    background: #f8f9fa;
+    min-width: 200px;
+}
+
+.counter {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #6e48aa;
+}
+
+/* Carousel */
+.course-carousel-wrapper {
+    position: relative;
+    margin: 2rem 0;
+}
+
+.course-carousel-container {
+    overflow: hidden;
+    width: 100%;
+}
+
+.course-carousel {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease;
+    padding: 0 50px;
+}
+
+.course-card {
+    min-width: 280px;
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.course-badge {
+    background: #6e48aa;
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.carousel-prev,
+.carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(110, 72, 170, 0.7);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.carousel-prev {
+    left: 0;
+}
+
+.carousel-next {
+    right: 0;
+}
+
+/* Section recommended-courses */
+.recommended-courses {
+    padding: 2rem;
+    justify-content: space-around;
+    margin: 3rem 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);   
+}
+
+/* Section CTA  */
+.cta-section {
+    padding: 2rem;
+    text-align: center;
+    background: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Bouton CTA */
+.cta-btn {
+    background: linear-gradient(45deg, #6e48aa, #9d50bb);
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.cta-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(157, 80, 187, 0.4);
+}
+
+/* /////////////////////////// */

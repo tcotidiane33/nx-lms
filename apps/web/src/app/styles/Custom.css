@@ -1,0 +1,95 @@
+.lms-homepage {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  .quick-actions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 3rem 0;
+  }
+  
+  .action-card {
+    padding: 2rem;
+    border-radius: 8px;
+    background: #f5f7fa;
+    color: #2c3e50;
+    text-decoration: none;
+    transition: transform 0.2s;
+  }
+  
+  .action-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+  
+  .back-link {
+    display: inline-block;
+    margin-top: 2rem;
+    color: #3498db;
+    text-decoration: none;
+  }
+
+  /* Animations de base */
+  [data-aos] {
+    opacity: 0;
+    transition: all 0.8s ease;
+  }
+  
+  [data-aos="fade-down"] {
+    transform: translateY(-20px);
+  }
+  
+  [data-aos="fade-up"] {
+    transform: translateY(20px);
+  }
+  
+  [data-aos="zoom-in"] {
+    transform: scale(0.9);
+  }
+  
+  [data-aos].animate {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  
+  /* Carousel */
+  .course-carousel {
+    display: flex;
+    overflow: hidden;
+    gap: 20px;
+    transition: transform 0.5s ease;
+  }
+  
+  .course-card {
+    min-width: 280px;
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  }
+  
+  /* Bouton CTA */
+  .cta-btn {
+    background: linear-gradient(45deg, #6e48aa, #9d50bb);
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .cta-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(157, 80, 187, 0.4);
+  }
