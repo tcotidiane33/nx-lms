@@ -54,3 +54,6 @@ test-output
 .env.development.local
 .env.test.local
 .env.production.local
+
+.cursor\rules\nx-rules.mdc
+.github\instructions\nx.instructions.md
