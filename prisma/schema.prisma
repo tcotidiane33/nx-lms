@@ -1,0 +1,88 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  name      String?
+  role      UserRole @default(STUDENT)
+  courses   Course[] @relation("TeacherCourses")
+  purchases Purchase[]
+  progress  UserProgress[]
+  reviews   Review[]
+  createdAt DateTime @default(now())
+}
+
+enum UserRole {
+  STUDENT
+  TEACHER
+  ADMIN
+}
+
+model Course {
+  id          String      @id @default(uuid())
+  title       String
+  description String
+  teacher     User        @relation("TeacherCourses", fields: [teacherId], references: [id])
+  teacherId   String
+  chapters    Chapter[]
+  purchases   Purchase[]
+  reviews     Review[]
+  createdAt   DateTime    @default(now())
+}
+
+model Chapter {
+  id        String   @id @default(uuid())
+  title     String
+  content   String
+  course    Course   @relation(fields: [courseId], references: [id])
+  courseId  String
+  order     Int
+  createdAt DateTime @default(now())
+  userProgress UserProgress[]
+}
+
+model Purchase {
+  id        String   @id @default(uuid())
+  user      User     @relation(fields: [userId], references: [id])
+  userId    String
+  course    Course   @relation(fields: [courseId], references: [id])
+  courseId  String
+  status    String
+  createdAt DateTime @default(now())
+}
+
+model UserProgress {
+  id        String   @id @default(uuid())
+  user      User     @relation(fields: [userId], references: [id])
+  userId    String
+  chapter   Chapter  @relation(fields: [chapterId], references: [id])
+  chapterId String
+  completed Boolean  @default(false)
+  updatedAt DateTime @updatedAt
+}
+
+model Review {
+  id        String   @id @default(uuid())
+  user      User     @relation(fields: [userId], references: [id])
+  userId    String
+  course    Course   @relation(fields: [courseId], references: [id])
+  courseId  String
+  rating    Int
+  comment   String?
+  isPublished Boolean @default(false)
+  createdAt DateTime @default(now())
+}
