@@ -20,6 +20,10 @@
     "target": "es2022",
     "customConditions": [
       "development"
-    ]
+    ],
+    // @lmsrepo/prisma = ../../../../../../generated/prisma
+    // "paths": {
+    //   "@lmsrepo/prisma": ["../../../../../../generated/prisma"],
+    // },
   }
 }

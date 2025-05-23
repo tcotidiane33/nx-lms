@@ -4,7 +4,8 @@ import LoginRegister from './features/auth/LoginRegister';
 import Dashboard from './features/dashboard/Dashboard';
 import { AuthProvider } from './lib/context/AuthContext';
 import './styles/Custom.css';
-import Scafold from './components/Scafold';
+import Home from "./pages";
+
 
 
 export default function App() {
@@ -27,11 +28,12 @@ export default function App() {
       </div> */}
       <Routes>
         <Route path="/login" element={<LoginRegister />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/register" element={<LoginRegister />} />
         <Route path="/dashboard" element={<Dashboard />} />
         
       </Routes>
-        <Scafold/>
+       
         {/* END: routes */}
     </AuthProvider>
 
