@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "fact":"800K",
+        "title": "Étudiants"
+    },
+    {
+        "id": 2,
+        "fact":"+500",
+        "title": "Cours de formation"
+    },
+    {
+        "id": 3,
+        "fact":"+50",
+        "title": "Pays"
+    },
+    {
+        "id": 4,
+        "fact":"+100",
+        "title": "Professeurs expérimentés"
+    }
+]

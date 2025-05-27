@@ -21,6 +21,20 @@
     "customConditions": [
       "development"
     ],
+
+    "baseUrl": "./apps/web/src/app",
+    "paths": {
+      "@components/*": ["components/*"],
+      "@globals/*": ["globals/*"],
+      "@data/*": ["data/*"],
+      "@assets/*": ["assets/*"],
+      "@pages/*": ["pages/*"],
+      "@services/*": ["services/*"],
+      "@hooks/*": ["hooks/*"],
+      "@utils/*": ["utils/*"],
+      "@types/*": ["types/*"]
+    }
+
     // @lmsrepo/prisma = ../../../../../../generated/prisma
     // "paths": {
     //   "@lmsrepo/prisma": ["../../../../../../generated/prisma"],

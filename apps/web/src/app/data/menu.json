@@ -1,0 +1,48 @@
+[
+    {
+        "id": 1,
+        "title": "Accueil",
+        "path": "/",
+        "subMenu":[]
+    },
+    {
+        "id": 2,
+        "title": "Cours",
+        "path": "/courses",
+        "subMenu":[
+            {
+                "id": 3,
+                "title": "Conception Web",
+                "path": "/courses/1"
+            },
+            {
+                "id": 4,
+                "title": "Android",
+                "path": "/courses/2"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "title": "Pages",
+        "path": "/#",
+        "subMenu":[
+            {
+                "id": 6,
+                "title": "Inscription",
+                "path": "/signup"
+            },
+            {
+                "id": 7,
+                "title": "Connexion",
+                "path": "/login"
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "title": "Contactez-nous",
+        "path": "/contact",
+        "subMenu":[]
+    }
+]

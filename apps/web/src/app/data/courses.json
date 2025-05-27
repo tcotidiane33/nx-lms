@@ -1,0 +1,79 @@
+[
+    {
+        "id": "1",
+        "title": "Conception Web Débutant",
+        "image":"/img/courses/web-development/1.jpg",
+        "instructor": "Peter Jackson",
+        "instructorImage": "/img/instructor/1.png",
+        "rating":"4.5",
+        "reviews":"504",
+        "price":"1,290,000",
+        "category": "Web"
+    },
+    {
+        "id": "2",
+        "title": "Formation React JS",
+        "image":"/img/courses/web-development/2.jpg",
+        "instructor": "Peter Jackson",
+        "instructorImage": "/img/instructor/1.png",
+        "rating":"4.5",
+        "reviews":"881",
+        "price":"149,000",
+        "category": "Web"
+    },
+    {
+        "id": "3",
+        "title": "Formation React Native",
+        "image":"/img/courses/web-development/3.jpg",
+        "instructor": "Peter Jackson",
+        "instructorImage": "/img/instructor/1.png",
+        "rating":"4.5",
+        "reviews":"254",
+        "price":"159,000",
+        "category": "Mobile"
+    },
+    {
+        "id": "4",
+        "title": "Formation Electron JS",
+        "image":"/img/courses/web-development/4.jpg",
+        "instructor": "Peter Jackson",
+        "instructorImage": "/img/instructor/1.png",
+        "rating":"4.5",
+        "reviews":"110",
+        "price":"160,000",
+        "category": "Desktop"
+    },
+    {
+        "id": "5",
+        "title": "Conception Web Avancée",
+        "image":"/img/courses/web-development/2.jpg",
+        "instructor": "Peter Jackson",
+        "instructorImage": "/img/instructor/1.png",
+        "rating":"4.5",
+        "reviews":"504",
+        "price":"1,990,000",
+        "category": "Web"
+    },
+    {
+        "id": "6",
+        "title": "Formation Vue JS",
+        "image":"/img/courses/web-development/3.jpg",
+        "instructor": "Peter Jackson",
+        "instructorImage": "/img/instructor/1.png",
+        "rating":"4.5",
+        "reviews":"504",
+        "price":"299,000",
+        "category": "Web"
+    },
+    {
+        "id": "7",
+        "title": "Formation Angular JS",
+        "image":"/img/courses/web-development/3.jpg",
+        "instructor": "Peter Jackson",
+        "instructorImage": "/img/instructor/1.png",
+        "rating":"4.5",
+        "reviews":"504",
+        "price":"369,000",
+        "category": "Web"
+    }
+]

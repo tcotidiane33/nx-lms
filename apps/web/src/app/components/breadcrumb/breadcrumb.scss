@@ -1,0 +1,9 @@
+.breadcrumb-nav{
+    direction: rtl;
+    padding: 1.875rem 0;
+}
+.breadcrumb {
+    &__item.active{
+        color: var(--black-70) !important;
+    }
+}

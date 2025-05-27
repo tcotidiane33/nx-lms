@@ -1,0 +1,25 @@
+@import '/src/app/globals/var';
+
+.course-details-tab-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1.875rem 0;
+    :first-child{
+        margin-right: 0;
+    }
+    button{
+        margin-right: 1rem;
+    }
+
+}
+@media (max-width: $small-width) {
+    .course-details-tab-container{
+        grid-template-columns: repeat(2,minmax(0,1fr));
+        display: grid;
+        gap: 0.5rem;
+        :first-child{
+            margin-right: 1rem;
+        }       
+    }
+}

@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Alireza",
+        "role": "Développeur",
+        "comment": "Si vous êtes designer ou travaillez dans le domaine du graphisme, vous avez certainement rencontré des textes connus sous le nom de Lorem Ipsum. Le Lorem Ipsum (ou texte factice en anglais) est un texte sans signification utilisé pour tester les polices ou remplir l'espace dans une conception graphique ou dans l'industrie de l'impression. Les designers web et graphistes utilisent ce texte pour remplir des pages et présenter la mise en page globale d'un design.",
+        "avatar":"/img/testimonial/1.png"
+    },
+    {
+        "name": "Morteza",
+        "role": "Designer",
+        "comment": "Si vous êtes designer ou travaillez dans le domaine du graphisme, vous avez certainement rencontré des textes connus sous le nom de Lorem Ipsum. Le Lorem Ipsum (ou texte factice en anglais) est un texte sans signification utilisé pour tester les polices ou remplir l'espace dans une conception graphique ou dans l'industrie de l'impression. Les designers web et graphistes utilisent ce texte pour remplir des pages et présenter la mise en page globale d'un design.",
+        "avatar":"/img/testimonial/2.png"
+    },
+    {
+        "name": "Shirin",
+        "role": "Développeuse",
+        "comment": "Si vous êtes designer ou travaillez dans le domaine du graphisme, vous avez certainement rencontré des textes connus sous le nom de Lorem Ipsum. Le Lorem Ipsum (ou texte factice en anglais) est un texte sans signification utilisé pour tester les polices ou remplir l'espace dans une conception graphique ou dans l'industrie de l'impression. Les designers web et graphistes utilisent ce texte pour remplir des pages et présenter la mise en page globale d'un design.",
+        "avatar":"/img/testimonial/3.png"
+    }
+]

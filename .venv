@@ -1,0 +1,14 @@
+# Pour Prisma (NestJS)
+DATABASE_URL="postgresql://postgres:postgres@localhost:5432/nxlmsdb"
+
+# Pour NestJS
+JWT_SECRET="supersecret"
+PORT=3333
+
+# Pour React (variables accessibles côté client)
+REACT_APP_API_URL="http://localhost:3333"
+
+
+  API_PREFIX=api
+  APP_NAME=LMS API
+  NODE_ENV=development
