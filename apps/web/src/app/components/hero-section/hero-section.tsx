@@ -1,7 +1,7 @@
-import { Button } from '@components/button/button';
-// import  BannerImage  from '@assets/img/banner-img.png';
+import { Button } from '../../components/button/button';
+import  BannerImage  from '../../../assets/img/banner-img.png';
 import type { ReactElement } from 'react';
-import { BubbleAnimation } from '@components/bubble-animation/bubble-animation';
+import { BubbleAnimation } from '../../components/bubble-animation/bubble-animation';
 import './hero-section.scss';
 // import { useNavigate } from 'react-router-dom';
 // import type { NavigateFunction } from 'react-router-dom';
@@ -19,9 +19,9 @@ export function HeroSection(): ReactElement {
               <h2 className="mb-3">Investir dans le savoir offre le meilleur retour</h2>
               <h1 className="mb-3">Template de site éducatif (ReactJs + TS)</h1>
               <p className="mb-4">Pour voir le code source du template sur GitHub, cliquez sur le bouton ci-dessous</p>
-              <a href="https://github.com/mahdihasanzadeh-dev/react-learning-website" target="_blank" rel="noreferrer">
+              <a href="https://github.com/tcotidiane33/nx-lms" target="_blank" rel="noreferrer">
                 <Button
-                  text="مشاهده source code"
+                  text="source code"
                   onClick={() => console.log('if you want navigate to another page use navigate function')}
                   backgroundColor="main"
                 />
@@ -33,7 +33,7 @@ export function HeroSection(): ReactElement {
               <div className="circular-img">
                 <div className="circular-img__inner">
                   <div className="circular-img__circle" />
-                  {/* <img src={BannerImage} alt="banner" /> */}
+                  <img src={BannerImage} alt="banner" />
                 </div>
               </div>
             </div>

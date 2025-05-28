@@ -44,6 +44,7 @@ export default [
               onlyDependOnLibsWithTags: ['*'],
             },
           ],
+          allowImportingTsExtensions: true,
         },
       ],
     },
