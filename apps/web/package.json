@@ -10,5 +10,8 @@
     "react-bootstrap": "^2.10.10",
     "react-helmet-async": "^2.0.5",
     "swiper": "^11.2.8"
+  },
+  "devDependencies": {
+    "@nx/vite": "21.0.1"
   }
 }

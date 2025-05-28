@@ -1,5 +1,5 @@
 import type { ReactElement } from 'react';
-import { Helmet } from 'react-helmet-async'; // Use react-helmet-async as an alternative
+import { Helmet } from 'react-helmet';
 import type { ISEOProperties } from './seo-interface';
 
 export function SEO({

@@ -1,55 +1,68 @@
-import nx from "@nx/eslint-plugin";
+// eslint.config.mjsimport eslint from '@eslint/js';
+import eslint from '@eslint/js';
+import nxPlugin from '@nx/eslint-plugin';
+import eslintPluginImport from 'eslint-plugin-import';
 
 export default [
-    ...nx.configs["flat/base"],
-    ...nx.configs["flat/typescript"],
-    ...nx.configs["flat/javascript"],
-    {
-      "ignores": [
-        "**/dist",
-        "**/vite.config.*.timestamp*",
-        "**/vitest.config.*.timestamp*"
-      ]
+  eslint.configs.recommended,
+  ...(nxPlugin.configs['flat/base'] || []),
+  ...(nxPlugin.configs['flat/typescript'] || []),
+  ...(nxPlugin.configs['flat/javascript'] || []),
+  ...(nxPlugin.configs['flat/react'] || []),
+  // Retire ou adapte la ligne suivante si elle pose problème
+  ...(Array.isArray(nxPlugin.configs['flat/jsx-runtime']) ? nxPlugin.configs['flat/jsx-runtime'] : []),
+  ...(nxPlugin.configs['flat/recommended'] || []),
+  {
+    files: ['**/*.ts', '**/*.tsx'],
+    languageOptions: {
+      parserOptions: {
+        projectService: true,
+      },
     },
-    {
-        files: [
-            "**/*.ts",
-            "**/*.tsx",
-            "**/*.js",
-            "**/*.jsx"
-        ],
-        rules: {
-            "@nx/enforce-module-boundaries": [
-                "error",
-                {
-                    enforceBuildableLibDependency: true,
-                    allow: [
-                        "^.*/eslint(\\.base)?\\.config\\.[cm]?js$"
-                    ],
-                    depConstraints: [
-                        {
-                            sourceTag: "*",
-                            onlyDependOnLibsWithTags: [
-                                "*"
-                            ]
-                        }
-                    ]
-                }
-            ]
-        }
+  },
+  {
+    files: ['**/*.js', '**/*.jsx'],
+    languageOptions: {
+      parserOptions: {
+        projectService: false,
+      },
     },
-    {
-        files: [
-            "**/*.ts",
-            "**/*.tsx",
-            "**/*.cts",
-            "**/*.mts",
-            "**/*.js",
-            "**/*.jsx",
-            "**/*.cjs",
-            "**/*.mjs"
-        ],
-        // Override or add rules here
-        rules: {}
-    }
+  },
+  {
+    plugins: {
+      import: eslintPluginImport,
+    },
+    rules: {
+      '@nx/enforce-module-boundaries': [
+        'error',
+        {
+          enforceBuildableLibDependency: true,
+          allow: ['^.*/eslint(\\.base)?\\.config\\.[cm]?js$'],
+          depConstraints: [
+            {
+              sourceTag: '*',
+              onlyDependOnLibsWithTags: ['*'],
+            },
+          ],
+        },
+      ],
+    },
+    files: ['**/*.{ts,tsx,js,jsx}'],
+    ignores: [
+      '**/dist',
+      '**/vite.config.*.timestamp*',
+      '**/vitest.config.*.timestamp*',
+    ],
+  },
 ];
+
+
+// This ESLint configuration is designed to work with Nx and TypeScript projects.
+// It includes recommended rules, Nx plugin configurations, and import plugin settings.
+// The configuration enforces module boundaries and allows specific exceptions for ESLint config files.
+// It also ignores certain directories and files related to build outputs and timestamps.
+// Ensure that you have the necessary dependencies installed:
+// - @eslint/js
+// - eslint-plugin-import
+// - @nx/eslint-plugin
+// This setup is suitable for maintaining code quality and consistency across your Nx workspace.

@@ -109,3 +109,50 @@ And join the Nx community:
 - **Authentication**: Ensure secure access with authentication powered by Clerk.
 - **ORM**: Utilize Prisma for efficient and type-safe database access.
 - **Database**: Benefit from MySQL database management with Aiven.
+
+
+
+```sh
+
+  // 🌐 Graph & Utilities
+  "graph": "nx graph",
+  "help": "nx help",
+  "dep-graph": "nx dep-graph",
+
+  // 🚀 Dev Servers
+  "dev:api": "nx serve api",
+  "dev:web": "nx serve web",
+
+  // 🏗️ Builds
+  "build": "nx run-many --target=build --projects=api,web --parallel",
+  "build:api": "nx build api",
+  "build:web": "nx build web",
+
+  // 🧪 Tests
+  "test": "nx run-many --target=test --projects=api,web --parallel",
+  "test:api": "nx test api",
+  "test:web": "nx test web",
+
+  // 🧹 Linting
+  "lint": "nx run-many --target=lint --all --parallel",
+  "lint:api": "nx lint api",
+  "lint:web": "nx lint web",
+
+  // 🧪 E2E Tests
+  "e2e": "nx run-many --target=e2e --projects=api-e2e,web-e2e",
+  "e2e:api": "nx e2e api-e2e",
+  "e2e:web": "nx e2e web-e2e",
+
+  // 🧬 Prisma (API only)
+  "prisma:generate": "nx run api:prisma:generate",
+  "prisma:migrate": "nx run api:prisma:migrate",
+  "prisma:studio": "nx run api:prisma:studio",
+
+  // 🧼 Clean dist folders (optional but useful)
+  "clean": "rimraf dist node_modules && pnpm install",
+
+  // 🔄 Migrations
+  "migrate:latest": "pnpm dlx nx@latest migrate latest && pnpm install --no-frozen-lockfile",
+  "migrate:run": "nx migrate --run-migrations"
+
+```

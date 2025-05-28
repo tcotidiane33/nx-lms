@@ -1,5 +1,5 @@
 import { Button } from '@components/button/button';
-import  BannerImage  from '@assets/img/banner-img.png';
+// import  BannerImage  from '@assets/img/banner-img.png';
 import type { ReactElement } from 'react';
 import { BubbleAnimation } from '@components/bubble-animation/bubble-animation';
 import './hero-section.scss';
@@ -33,7 +33,7 @@ export function HeroSection(): ReactElement {
               <div className="circular-img">
                 <div className="circular-img__inner">
                   <div className="circular-img__circle" />
-                  <img src={BannerImage} alt="banner" />
+                  {/* <img src={BannerImage} alt="banner" /> */}
                 </div>
               </div>
             </div>

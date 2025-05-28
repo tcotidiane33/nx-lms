@@ -8,8 +8,11 @@
     "lib": [
       "es2022"
     ],
-    "module": "esnext",
-    "moduleResolution": "bundler",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "noEmitOnError": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitOverride": true,
@@ -22,17 +25,18 @@
       "development"
     ],
 
-    "baseUrl": "./apps/web/src/app",
+    "baseUrl": ".",
     "paths": {
-      "@components/*": ["components/*"],
-      "@globals/*": ["globals/*"],
-      "@data/*": ["data/*"],
-      "@assets/*": ["assets/*"],
-      "@pages/*": ["pages/*"],
-      "@services/*": ["services/*"],
-      "@hooks/*": ["hooks/*"],
-      "@utils/*": ["utils/*"],
-      "@types/*": ["types/*"]
+      "@components/*": ["apps/web/src/app/components/*"],
+      "@globals/*": ["apps/web/src/app/globals/*"],
+      "@data/*": ["apps/web/src/app/data/*"],
+      "@assets/*": ["apps/web/src/app/assets/*"],
+      "@pages/*": ["apps/web/src/app/pages/*"],
+      "@services/*": ["apps/web/src/app/services/*"],
+      "@hooks/*": ["apps/web/src/app/hooks/*"],
+      "@utils/*": ["apps/web/src/app/utils/*"],
+      "@types/*": ["apps/web/src/app/types/*"],
+      "@nx/eslint-plugin": ["node_modules/@nx/eslint-plugin"]
     }
 
     // @lmsrepo/prisma = ../../../../../../generated/prisma

@@ -15,6 +15,7 @@ import type { ITestimonialsState } from './testimonials-interface';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import './testimonials.scss';
+import type { Swiper as SwiperClass } from 'swiper/types';
 
 export function Testimonials():ReactElement {
   const [state, setState] = useState<ITestimonialsState>({
@@ -34,7 +35,7 @@ export function Testimonials():ReactElement {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
-    onActiveIndexChange: (swiper) => {
+    onActiveIndexChange: (swiper: SwiperClass) => {
       setState({ activeTestimonialIndex: swiper.realIndex });
     },
   };

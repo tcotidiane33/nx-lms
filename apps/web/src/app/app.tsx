@@ -4,7 +4,7 @@ import LoginRegister from './features/auth/LoginRegister';
 import Dashboard from './features/dashboard/Dashboard';
 import { AuthProvider } from './lib/context/AuthContext';
 import './styles/Custom.css';
-import Home from "./pages";
+import { Home } from "./pages/home/Home";
 
 
 
