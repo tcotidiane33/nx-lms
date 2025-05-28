@@ -483,3 +483,31 @@ summary svg {
         gap: 4rem;
     }
 }
+
+/* Custom Swiper Navigation Styles */
+.swiper-button-next,
+.swiper-button-prev {
+  color:  rgb(11, 96, 233); /* Change the color of the arrows */
+  width: var(--swiper-navigation-size); /* Keep the original size variable */
+  height: var(--swiper-navigation-size);
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: var(--swiper-navigation-size); /* Adjust arrow icon size */
+}
+
+.swiper-button-next {
+  right: 10px; /* Adjust position from the right */
+}
+
+.swiper-button-prev {
+  left: 10px; /* Adjust position from the left */
+}
+
+/* Example: Change color on hover */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  color:  hsla(162, 47%, 50%, 1);
+}
+

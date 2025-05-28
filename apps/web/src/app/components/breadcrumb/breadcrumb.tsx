@@ -16,11 +16,11 @@ export function BreadcrumbComponent({ title }: IBredcrumbInterface) {
         <Breadcrumb className="breadcrumb">
           <BreadcrumbItem className="breadcrumb__item" linkAs="span">
             <Link to="/">
-              صفحه اصلی
+              Page d'accueil
             </Link>
           </BreadcrumbItem>
           {pathnames.map((name, index) => {
-            const routeTo: string = `/${pathnames.slice(0, index + 1).join('/')}`;
+            const routeTo = `/${pathnames.slice(0, index + 1).join('/')}`;
             const isLast: boolean = index === pathnames.length - 1;
             return isLast ? (
               <BreadcrumbItem active key={useId()} className="breadcrumb__item" linkAs="span">

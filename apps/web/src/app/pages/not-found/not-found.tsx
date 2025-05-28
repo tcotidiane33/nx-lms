@@ -1,10 +1,10 @@
-/* eslint-disable max-len */
+
 import { Suspense } from 'react';
-import { SEO } from '@components/seo/seo';
+import { SEO } from '../../components/seo/seo';
 import type { ReactElement } from 'react';
-import { Language } from '@globals/enum';
-import { Spinner } from '@components/spinner/spinner';
-import { Button } from '@components/button/button';
+import { Language } from '../../globals/enum';
+import { Spinner } from '../../components/spinner/spinner';
+import { Button } from '../../components/button/button';
 import { useNavigate } from 'react-router-dom';
 import type { NavigateFunction } from 'react-router-dom';
 import './not-found.scss';

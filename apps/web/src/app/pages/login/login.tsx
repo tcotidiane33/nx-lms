@@ -1,12 +1,12 @@
 import { Suspense } from 'react';
-import { SEO } from '@components/seo/seo';
+import { SEO } from '../../components/seo/seo';
 import type { ReactElement } from 'react';
-import { BreadcrumbComponent } from '@components/breadcrumb/breadcrumb';
-import { Language } from '@globals/enum';
-import { Input } from '@components/input/input';
-import { Spinner } from '@components/spinner/spinner';
+import { BreadcrumbComponent } from '../../components/breadcrumb/breadcrumb';
+import { Language } from '../../globals/enum';
+import { Input } from '../../components/input/input';
+import { Spinner } from '../../components/spinner/spinner';
 import { Link } from 'react-router-dom';
-import { Button } from '@components/button/button';
+import { Button } from '../../components/button/button';
 import './login.scss';
 
 export function LogIn(): ReactElement {

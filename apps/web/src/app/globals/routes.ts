@@ -1,9 +1,9 @@
-import { Home } from "@pages/home/Home";
-import { Courses } from "@pages/courses/courses";
-import { CourseDetails } from "@pages/course-details/course-details";
-import { LogIn } from "@pages/login/login";
-import { SignUp } from "@pages/signup/signup";
-import { Contact } from "@pages/contact/contact";
+import { Home } from '../pages/home/Home';
+import { Courses } from '@pages/courses/Courses';
+import { CourseDetails } from '../pages/course-details/course-details';
+import { LogIn } from '../pages/login/login';
+import { SignUp } from '../pages/signup/SignUp';
+import { Contact } from '../pages/contact/contact';
 
 export const ROUTES = {
   home: {

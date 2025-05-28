@@ -1,4 +1,4 @@
-@import '/src/app/globals/var';
+@import '../../globals/var';
 
 .not-found-section{
     .not-found-box{
@@ -17,7 +17,7 @@
                 height: 3rem;
             }
         }
-        
+
         p{
             margin-top: 1.5rem;
             margin-bottom: 0;

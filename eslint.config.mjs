@@ -9,7 +9,6 @@ export default [
   ...(nxPlugin.configs['flat/typescript'] || []),
   ...(nxPlugin.configs['flat/javascript'] || []),
   ...(nxPlugin.configs['flat/react'] || []),
-  // Retire ou adapte la ligne suivante si elle pose problème
   ...(Array.isArray(nxPlugin.configs['flat/jsx-runtime']) ? nxPlugin.configs['flat/jsx-runtime'] : []),
   ...(nxPlugin.configs['flat/recommended'] || []),
   {
@@ -44,11 +43,31 @@ export default [
               onlyDependOnLibsWithTags: ['*'],
             },
           ],
-          allowImportingTsExtensions: true,
+          //allowImportingTsExtensions: true,
         },
       ],
     },
-    files: ['**/*.{ts,tsx,js,jsx}'],
+    /*
+    *  "rules": {
+      "@nx/enforce-module-boundaries": [
+        "error",
+        {
+          "allow": ["@assets/*"],
+
+          "enforceBuildableLibDependency": true,
+          "depConstraints": [
+            {
+              "sourceTag": "*",
+              "onlyDependOnLibsWithTags": ["*"]
+            }
+          ],
+          allowImportingTsExtensions: true,
+
+        }
+      ]
+    },*/
+
+    files: ['**/*.{ts,tsx,js,jsx,mjs,json}'],
     ignores: [
       '**/dist',
       '**/vite.config.*.timestamp*',
