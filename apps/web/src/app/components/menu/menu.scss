@@ -1,4 +1,4 @@
-@import '/src/app/globals/var';
+@import '@globals/var';
 
 .menu{
     direction: rtl;
@@ -32,9 +32,9 @@
         div{
             display: flex;
             align-items: center;
-            
+
         }
-       
+
         @media screen and (min-width: $medium-width) {
             &:hover{
                 >.sub-menu{
@@ -44,7 +44,7 @@
                     backdrop-filter:none !important;
                 }
             }
-            
+
         }
     }
 }
@@ -85,8 +85,8 @@
                 border-bottom: 1px solid var(--border-color-1);
                 padding: 0 6px;
             }
-           a{   
-                padding: 12px 15px;    
+           a{
+                padding: 12px 15px;
             }
             &:first-child{
                 border-top: 1px solid var(--border-color-1);

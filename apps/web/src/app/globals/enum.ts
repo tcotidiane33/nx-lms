@@ -1,6 +1,8 @@
-/* eslint-disable @typescript-eslint/naming-convention */
+
 export enum Language {
     EN_US = 'en-us',
+    EN_GB = 'en-GB',
     FR_FR = 'fr-FR',
-    FR_UE = 'fr-FR'
+
+
 }

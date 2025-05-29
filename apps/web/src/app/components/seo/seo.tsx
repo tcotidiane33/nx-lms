@@ -1,6 +1,6 @@
 import type { ReactElement } from 'react';
-import { Helmet } from 'react-helmet';
 import type { ISEOProperties } from './seo-interface';
+import {Helmet} from "react-helmet";
 
 export function SEO({
   pageTitle,
