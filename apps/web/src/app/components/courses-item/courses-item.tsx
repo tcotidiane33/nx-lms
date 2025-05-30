@@ -4,7 +4,7 @@ import type { ReactElement } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
 import type { ICourseItemProperties } from './courses-item-interface';
-import './courses-item.scss';
+import './courses-item.css';
 
 export function CoursesItem({
   id,

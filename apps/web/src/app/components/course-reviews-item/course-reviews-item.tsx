@@ -1,7 +1,7 @@
 import type { ReactElement } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
-import './course-reviews-item.scss';
+import './course-reviews-item.css';
 
 export function CourseReviewsItem():ReactElement {
   return (

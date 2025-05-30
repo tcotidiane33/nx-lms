@@ -1,5 +1,5 @@
 /// <reference types='vitest' />
-import { defineConfig } from 'vite';
+import { defineConfig, splitVendorChunkPlugin } from 'vite';
 import react from '@vitejs/plugin-react';
 // Ensure @nx/vite is installed to resolve this import
 // The import path for vite-tsconfig-paths plugin is typically '@nx/vite/plugins/vite-tsconfig-paths.plugin'
@@ -7,6 +7,7 @@ import react from '@vitejs/plugin-react';
 // If the path below is incorrect for your version of @nx/vite, you might need to adjust it.
 // import { viteTsConfigPaths } from '@nx/vite/plugins/vite-tsconfig-paths.plugin';
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
+import path from 'path';
 
 // @ts-ignore
 export default defineConfig(() => ({
@@ -20,7 +21,7 @@ export default defineConfig(() => ({
     port: 4300,
     host: 'localhost',
   },
-  plugins: [react(), nxViteTsPaths({
+  plugins: [react(), splitVendorChunkPlugin(), nxViteTsPaths({
     root: '../../' // Chemin vers la racine du workspace
   })
   ],
@@ -47,4 +48,30 @@ export default defineConfig(() => ({
       provider: 'v8' as const,
     }
   },
+
+  resolve: {
+    alias: {
+      '@globals': path.resolve(__dirname, './src/app/globals'),
+      '@components': path.resolve(__dirname, './src/app/components'),
+      '@pages': path.resolve(__dirname, './src/app/pages'),
+      '@hooks': path.resolve(__dirname, './src/app/hooks'),
+      '@utils': path.resolve(__dirname, './src/app/utils'),
+      '@assets': path.resolve(__dirname, './src/app/assets'),
+      '@services': path.resolve(__dirname, './src/app/services'),
+      '@types': path.resolve(__dirname, './src/app/types'),
+      '@contexts': path.resolve(__dirname, './src/app/contexts'),
+      '@store': path.resolve(__dirname, './src/app/store'),
+
+      // ... vos autres alias
+    },
+  },
+
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@import "${path.resolve(__dirname, './src/app/globals/_var.css')}";`,
+      },
+    },
+  },
+
 }));

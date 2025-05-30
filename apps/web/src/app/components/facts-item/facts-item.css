@@ -1,0 +1,23 @@
+
+.facts__item {
+    padding: 15px 0;
+}
+.facts__item h2 {
+    font-weight: 700;
+    font-size: 1.875rem;
+}
+.facts__item p {
+    margin: 0 !important;
+}
+.facts__item--1 {
+    color: var(--black-70) !important;
+}
+.facts__item--2 {
+    color: var(--green-light) !important;
+}
+.facts__item--3 {
+    color: var(--red-light) !important;
+}
+.facts__item--4 {
+    color: var(--orange-light) !important;
+}

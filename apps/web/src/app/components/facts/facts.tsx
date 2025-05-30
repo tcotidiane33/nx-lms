@@ -2,7 +2,7 @@ import type { ReactElement } from 'react';
 import facts from '@data/facts.json';
 import { FactsItem } from '@components/facts-item/facts-item';
 import type { IFactItemProperties } from '@components/facts-item/facts-item-interface';
-import './facts.scss';
+import './facts.css';
 
 export function Facts():ReactElement {
   return (

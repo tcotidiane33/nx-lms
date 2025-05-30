@@ -7,7 +7,7 @@ import { Input } from '@components/input/input';
 import { Button } from '@components/button/button';
 import { Spinner } from '@components/spinner/spinner';
 import { Link } from 'react-router-dom';
-import './signup.scss';
+import './signup.css';
 
 export function SignUp(): ReactElement {
   return (

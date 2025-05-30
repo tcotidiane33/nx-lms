@@ -1,6 +1,6 @@
 import { Button } from '@components/button/button';
 // import instrucorImg from '@assets/img/bai-img.png';
-import './become-instructor.scss';
+import './become-instructor.css';
 
 export function BecomeInstructor() {
   return (

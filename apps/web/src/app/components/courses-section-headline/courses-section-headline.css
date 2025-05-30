@@ -1,0 +1,27 @@
+/* @import '../../globals/var'; */
+.section-title {
+    text-align: center;
+}
+.section-title .title {
+    font-size: 1.25rem;
+    color: var(--main-color);
+}
+.section-title .sub-title {
+    font-size: 2.1875rem;
+    font-weight: 600;
+}
+
+@media (max-width: var(--large-width)) {
+    .section-title .sub-title {
+        font-size: 1.875rem;
+    }
+}
+
+@media (max-width: var(--medium-width)) {
+    .section-title .sub-title {
+        font-size: 1.375rem;
+    }
+    .section-title .title {
+        font-size: 1.125rem;
+    }
+}

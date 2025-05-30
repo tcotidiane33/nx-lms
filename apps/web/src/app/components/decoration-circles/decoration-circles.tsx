@@ -1,5 +1,5 @@
 import type { ReactElement } from 'react';
-import './decoration-circles.scss';
+import './decoration-circles.css';
 
 export function DecorationCircles():ReactElement {
   return (

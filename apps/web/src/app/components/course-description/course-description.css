@@ -1,0 +1,7 @@
+.course-description h3, .course-description h4 {
+    font-weight: 600;
+}
+
+.course-description p {
+    text-align: justify;
+}

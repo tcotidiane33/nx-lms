@@ -2,7 +2,7 @@
 import type { ReactElement } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faPlayCircle, faCertificate } from '@fortawesome/free-solid-svg-icons';
-import './course-instructor.scss';
+import './course-instructor.css';
 
 export function CourseInstructor():ReactElement {
   return (

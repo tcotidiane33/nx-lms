@@ -2,7 +2,7 @@
 import type { ReactElement } from 'react';
 import { Backdrop } from '@components/backdrop/backdrop';
 import type { IModalProperties } from './modal-interface';
-import './modal.scss';
+import './modal.css';
 
 export function Modal({ show, modalClosed, children }: IModalProperties):ReactElement {
   return (

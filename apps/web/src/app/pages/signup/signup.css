@@ -1,0 +1,40 @@
+
+.signup-section {
+    padding-top: 0 !important;
+}
+.signup-section .signup-form__title {
+    font-size: 1.5rem;
+    margin: 0 0 30px;
+    font-weight: 600;
+    text-align: center;
+}
+.signup-section .signup-form .form-group {
+    margin-top: 1.5rem;
+}
+.signup-section .signup-form .form-control {
+    height: 3rem;
+    border-color: var(--border-color-1) !important;
+    color: var(--black-90) !important;
+    background-color: transparent;
+}
+.signup-section .signup-form .form-control:focus {
+    box-shadow: none;
+}
+.signup-section .signup-form .form-control::placeholder {
+    color: var(--black-70) !important;
+}
+.signup-section .signup-form button {
+    width: 100%;
+    margin-top: 1.5rem;
+    height: 3rem;
+}
+.signup-section .signup-form p {
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+    text-align: center;
+}
+@media (max-width: var(--medium-width)) {
+    .signup-form__title {
+        font-size: 1.375rem !important;
+    }
+}

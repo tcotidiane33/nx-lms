@@ -1,6 +1,6 @@
 import type { ReactElement } from 'react';
 import type { ICoursesSectionHeadlineProperties } from './courses-section-headline-interface';
-import './courses-section-headline.scss';
+import './courses-section-headline.css';
 
 export function CoursesSectionHeadline(
   { title, subTitle }: ICoursesSectionHeadlineProperties,

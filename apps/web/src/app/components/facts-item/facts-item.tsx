@@ -1,6 +1,6 @@
 import type { ReactElement } from 'react';
 import type { IFactItemProperties } from './facts-item-interface';
-import './facts-item.scss';
+import './facts-item.css';
 
 export function FactsItem({ fact, title, id }:IFactItemProperties):ReactElement {
   return (

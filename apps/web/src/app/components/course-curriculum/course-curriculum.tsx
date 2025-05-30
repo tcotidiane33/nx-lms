@@ -3,7 +3,7 @@ import type { ReactElement } from 'react';
 import Accordion from 'react-bootstrap/Accordion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCirclePlay } from '@fortawesome/free-solid-svg-icons';
-import './course-curriculum.scss';
+import './course-curriculum.css';
 
 export function CourseCurriculum():ReactElement {
   return (

@@ -1,6 +1,6 @@
 import type { ReactElement } from 'react';
 import Pagination from 'react-bootstrap/Pagination';
-import './paginate.scss';
+import './paginate.css';
 
 export function Paginate():ReactElement {
   return (

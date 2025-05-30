@@ -43,7 +43,7 @@ export default [
               onlyDependOnLibsWithTags: ['*'],
             },
           ],
-          allowImportingTsExtensions: true,
+          // allowImportingTsExtensions: true,
         },
       ],
     },

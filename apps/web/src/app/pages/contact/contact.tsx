@@ -8,7 +8,7 @@ import { BreadcrumbComponent } from '@components/breadcrumb/breadcrumb';
 import { ContactItems } from '@components/contact-items/contact-itesm';
 import { ContactForm } from '@components/contact-form/contact-form';
 import { Spinner } from '@components/spinner/spinner';
-import './contact.scss';
+import './contact.css';
 
 export function Contact(): ReactElement {
   return (

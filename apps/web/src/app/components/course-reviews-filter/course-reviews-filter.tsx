@@ -2,7 +2,7 @@ import type { ReactElement } from 'react';
 import { Input } from '@components/input/input';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
-import './course-reviews-filter.scss';
+import './course-reviews-filter.css';
 
 export function CourseReviewsFilter():ReactElement {
   return (

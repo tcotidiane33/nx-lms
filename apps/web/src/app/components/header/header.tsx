@@ -6,7 +6,7 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { Menu } from '@components/menu/menu';
 import { headerHelper } from './header-helper';
 import type { IHeaderState } from './header-interface';
-import './header.scss';
+import './header.css';
 
 export function Header():ReactElement {
   const [state, setState] = useState<IHeaderState>({

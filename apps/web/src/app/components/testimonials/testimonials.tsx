@@ -14,7 +14,7 @@ import { testimonialsHelper } from './testimonials-helper';
 import type { ITestimonialsState } from './testimonials-interface';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import './testimonials.scss';
+import './testimonials.css';
 import type { Swiper as SwiperClass } from 'swiper/types';
 
 export function Testimonials():ReactElement {

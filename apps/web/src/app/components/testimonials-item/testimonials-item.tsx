@@ -2,7 +2,7 @@
 
 import type { ReactElement } from 'react';
 import type { ITestimonialsItemProperties } from './testimonials-item-interface';
-import './testimonials-item.scss';
+import './testimonials-item.css';
 
 export function TestimonialsItem({ name, role, avatar, comment }: ITestimonialsItemProperties):ReactElement {
   return (

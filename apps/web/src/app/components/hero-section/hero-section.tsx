@@ -2,7 +2,7 @@ import { Button } from '../button/button';
 import  BannerImage  from '../../assets/img/banner-img.png';
 import type { ReactElement } from 'react';
 import { BubbleAnimation } from '../bubble-animation/bubble-animation';
-import './hero-section.scss';
+import './hero-section.css';
 // import { useNavigate } from 'react-router-dom';
 // import type { NavigateFunction } from 'react-router-dom';
 

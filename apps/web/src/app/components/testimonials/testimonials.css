@@ -1,0 +1,41 @@
+.testimonials-section {
+    position: relative;
+}
+.testimonials-section .img-box{
+    height: 150px;
+    width: 150px;
+    background-color: var(--red-light);
+    margin: 30px auto 50px;
+    position: relative;
+}
+.testimonials-section .img-box::before,
+.testimonials-section .img-box::after{
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    border:1px solid var(--red-light);
+    animation: spin 15s linear infinite;
+}
+.testimonials-section .img-box::before{
+    width: 180px;
+    height: 180px;
+    top: -15px;
+    left: -15px;
+    border-left: 1px solid transparent;
+}
+.testimonials-section .img-box::after{
+    width: 210px;
+    height: 210px;
+    top: -30px;
+    left: -30px;
+    border-right: 1px solid transparent;
+}
+
+@keyframes spin {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}

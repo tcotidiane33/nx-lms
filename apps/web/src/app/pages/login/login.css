@@ -1,0 +1,47 @@
+/* 
+</thought>
+
+**Outlining the Implementation**
+
+I've broken down the process into clear steps. First, I'll pinpoint SCSS constructs like nested selectors, parent selectors (using '&'), and variable usages. Then, I'll convert these into their CSS equivalents. The plan is to flatten nested selectors, properly expand parent selectors, and translate the SCSS variable syntax into standard CSS. Finally, I will preserve any existing `@import` directives.@import '../../globals/var'; */
+
+.login-section {
+    padding-top: 0 !important;
+}
+.login-section .login-form__title {
+    font-size: 1.5rem;
+    margin: 0 0 30px;
+    font-weight: 600;
+    text-align: center;
+}
+.login-section .login-form .form-group {
+    margin-top: 1.5rem;
+}
+.login-section .login-form .form-control {
+    height: 3rem;
+    border-color:var(--border-color-1) !important;
+    color: var(--black-90) !important;
+    background-color: transparent;
+}
+.login-section .login-form .form-control:focus {
+    box-shadow: none;
+}
+.login-section .login-form .form-control::placeholder {
+    color: var(--black-70) !important;
+}
+.login-section .login-form button {
+    width: 100%;
+    margin-top: 1.5rem;
+    height: 3rem;
+}
+.login-section .login-form p {
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+@media (max-width: var(--medium-width)) {
+    .login-section .login-form__title {
+        font-size: 1.375rem !important;
+    }
+}

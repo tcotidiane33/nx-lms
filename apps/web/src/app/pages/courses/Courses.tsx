@@ -11,7 +11,7 @@ import { Paginate } from '@components/paginate/paginate';
 import { Spinner } from '@components/spinner/spinner';
 import type { ICoursesState } from './courses-interface';
 import { coursesHelper } from './courses-helper';
-import './courses.scss';
+import './courses.css';
 
 export function Courses():ReactElement {
   const [state, setState] = useState<ICoursesState>({

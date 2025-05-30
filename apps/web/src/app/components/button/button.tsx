@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/consistent-type-imports */
 import type { ReactElement } from 'react';
 import { IButtonProperties, ButtonTypes, ButtonSize } from './button-interface';
-import './button.scss';
+import './button.css';
 
 export function Button({
   text,

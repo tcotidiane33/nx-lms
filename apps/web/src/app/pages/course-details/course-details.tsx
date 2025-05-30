@@ -11,7 +11,7 @@ import { CourseDetailsSideBar } from '@components/course-details-sidebar/course-
 import { Spinner } from '@components/spinner/spinner';
 import { Language } from '@globals/enum';
 import type { ILocationState } from './course-details-interface';
-import './course-details.scss';
+import './course-details.css';
 
 export function CourseDetails():ReactElement {
   const location: Location = useLocation();

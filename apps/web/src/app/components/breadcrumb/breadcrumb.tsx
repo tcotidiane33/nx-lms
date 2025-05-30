@@ -3,7 +3,7 @@ import { Breadcrumb, BreadcrumbItem } from 'react-bootstrap';
 import { Link, useLocation } from 'react-router-dom';
 import { breadcrumbHelper } from './breadcrumb-helper';
 import type { IBredcrumbInterface } from './breadcrumb-interface';
-import './breadcrumb.scss';
+import './breadcrumb.css';
 
 export function BreadcrumbComponent({ title }: IBredcrumbInterface) {
   const { pathname } = useLocation();

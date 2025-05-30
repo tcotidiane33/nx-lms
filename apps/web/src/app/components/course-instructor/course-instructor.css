@@ -1,0 +1,45 @@
+/* @import '../../globals/var'; */
+
+
+.course-instructor h3 {
+    font-weight: 600;
+}
+.course-instructor .details-wrap {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap !important;
+}
+.course-instructor .img-box img {
+    width: 8rem;
+    margin-bottom: 1rem;
+    border-radius: 100%;
+}
+.course-instructor .left-box {
+    margin-right: 1.5rem !important;
+}
+.course-instructor .left-box h4 {
+    font-size: 1rem;
+    text-transform: capitalize;
+    margin-bottom: .625rem;
+    font-weight: 600;
+}
+.course-instructor .left-box h4 span {
+    font-weight: 300;
+}
+.course-instructor .left-box ul li svg {
+    color: var(--main-color);
+    margin-left: 5px;
+}
+.course-instructor .left-box ul li:not(:last-child) {
+    margin-bottom: 5px;
+}
+.course-instructor p {
+    text-align: justify;
+    margin-bottom: 0;
+}
+
+@media (max-width: var(--large-width)) {
+    .course-instructor .details-wrap {
+        margin-bottom: 15px;
+    }
+}

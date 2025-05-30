@@ -1,0 +1,31 @@
+.course-reviews-item{
+    position: relative;
+    margin-bottom: 30px;
+    padding-right: 65px;
+}
+.course-reviews-item .img-box{
+    max-width: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.course-reviews-item h4{
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0 0 5px;
+    color: var(--black-90);
+}
+.course-reviews-item .stars-rating svg{
+    color: var(--orange);
+    font-size: 0.875rem;
+}
+.course-reviews-item .stars-rating .date{
+    margin-right: 5px;
+    font-size: 0.875rem;
+    display: inline-block;
+}
+.course-reviews-item p{
+    margin: 5px 0 0;
+}

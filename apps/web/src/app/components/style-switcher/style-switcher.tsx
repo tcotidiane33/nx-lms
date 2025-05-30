@@ -6,7 +6,7 @@ import { faCog, faTimes } from '@fortawesome/free-solid-svg-icons';
 import Form from 'react-bootstrap/Form';
 import type { IStyleSwitcherState } from './style-switcher-interface';
 import { styleSwitcherHelper } from './style-switcher-helper';
-import './style-switcher.scss';
+import './style-switcher.css';
 
 export function StyleSwitcher(): ReactElement {
   const [state, setState] = useState<IStyleSwitcherState>({

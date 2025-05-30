@@ -1,0 +1,33 @@
+/* 
+// </thought>
+
+// **Refining Selector Resolution**
+
+// I'm now immersed in the crucial stage of precisely resolving the nested selectors and `&` occurrences. The current focus is on transforming the nested rules, especially dealing with the `.decoration-imgs &__ item` construct into the correct CSS format. I'm methodically working through the `.decoration-imgs` and `nth-child` rules, ensuring each rule is accurately converted to its standard CSS equivalent. */
+
+.decoration-imgs__item {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.4;
+}
+.decoration-imgs__item:nth-child(1) {
+    width: 60px;
+    height: 60px;
+    left: 20%;
+    top: 30%;
+    background-color: var(--yellow-light);
+}
+.decoration-imgs__item:nth-child(2) {
+    width: 80px;
+    height: 80px;
+    left: 90%;
+    top: 40%;
+    background-color: var(--red-light);
+}
+.decoration-imgs__item:nth-child(3) {
+    width: 40px;
+    height: 40px;
+    left: 10%;
+    top: 60%;
+    background-color: var(--green-light);
+}

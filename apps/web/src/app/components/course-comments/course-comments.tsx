@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
 import { RatingBars } from '@components/rating-bars/rating-bars';
 import { CourseReviews } from '@components/course-reviews/course-reviews';
-import './course-comments.scss';
+import './course-comments.css';
 import { CourseReviewsFilter } from '@components/course-reviews-filter/course-reviews-filter';
 import { Button } from '@components/button/button';
 

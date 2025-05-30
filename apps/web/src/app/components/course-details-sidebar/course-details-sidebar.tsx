@@ -6,7 +6,7 @@ import { useState } from 'react';
 import type { ReactElement } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
-import './course-details-sidebar.scss';
+import './course-details-sidebar.css';
 import { Button } from '@components/button/button';
 import Modal from 'react-bootstrap/Modal';
 import { courseDetailsSideBarHelper } from './course-details-sidebar-helper';

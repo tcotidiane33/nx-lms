@@ -1,7 +1,7 @@
 import { Button } from '@components/button/button';
 import { Input } from '@components/input/input';
 import type { ReactElement } from 'react';
-import './contact-form.scss';
+import './contact-form.css';
 
 export function ContactForm():ReactElement {
   return (

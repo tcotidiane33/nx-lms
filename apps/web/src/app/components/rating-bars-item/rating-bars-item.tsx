@@ -1,6 +1,6 @@
 import type { ReactElement } from 'react';
 import type { IRatingBarsItemProperties } from './rating-bars-item-interface';
-import './rating-bars-item.scss';
+import './rating-bars-item.css';
 
 export function RatingBarsItem({ progress, star }: IRatingBarsItemProperties):ReactElement {
   return (

@@ -7,7 +7,7 @@ import { CourseInstructor } from '@components/course-instructor/course-instructo
 import { CourseComments } from '@components/course-comments/course-comments';
 import { courseDetailsTabsHelper } from './course-details-tabs-helper';
 import type { ICourseDetailsTabsState, ICourseTabs } from './course-details-tabs-interface';
-import './course-details-tabs.scss';
+import './course-details-tabs.css';
 
 const TABS: ICourseTabs[] = ['Programme', 'Description', 'Instructeur', 'Avis'];
 

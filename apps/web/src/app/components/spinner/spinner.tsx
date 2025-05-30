@@ -1,5 +1,5 @@
 import type { ReactElement } from 'react';
-import './spinner.scss';
+import './spinner.css';
 
 export function Spinner(): ReactElement {
   return (

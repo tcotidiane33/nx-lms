@@ -1,7 +1,7 @@
 import type { ReactElement } from 'react';
 import { useId } from 'react';
 import type { IDecorationImgsProperties } from './decoration-imgs-interface';
-import './decoration-imgs.scss';
+import './decoration-imgs.css';
 
 export function DecorationImgs({ testimonialsData }: IDecorationImgsProperties):ReactElement {
   return (

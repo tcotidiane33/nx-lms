@@ -7,7 +7,7 @@ import { Spinner } from '../../components/spinner/spinner';
 import { Button } from '../../components/button/button';
 import { useNavigate } from 'react-router-dom';
 import type { NavigateFunction } from 'react-router-dom';
-import './not-found.scss';
+import './not-found.css';
 
 export function NotFound(): ReactElement {
   const navigate: NavigateFunction = useNavigate();

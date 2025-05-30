@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
 import { NavLink } from 'react-router-dom';
 import type { ICourseDetailsHeaderProperties } from './course-details-header-interface';
-import './course-details-header.scss';
+import './course-details-header.css';
 
 export function CourseDetailsHeader({ title }: ICourseDetailsHeaderProperties):ReactElement {
   return (

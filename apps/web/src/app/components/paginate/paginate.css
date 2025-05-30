@@ -1,0 +1,18 @@
+.pagination-container{
+    display: flex;
+    justify-content: center;
+    direction: ltr;
+}
+.pagination-container .page-link{
+    border: none;
+    background-color: transparent;
+    color: var(--black-70);
+}
+.pagination-container .page-link:hover{
+    background-color: var(--main-color);
+    color: var(--WHITE) !important;
+}
+.pagination-container .active>.page-link, .pagination-container .page-link.active {
+    background-color: var(--main-color) !important;
+    color: var(--WHITE) !important;
+}

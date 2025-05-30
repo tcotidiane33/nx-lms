@@ -1,5 +1,5 @@
 import type {ReactElement} from "react";
-import "./profile.scss";
+import "./profile.css";
 
 export function Profile():  ReactElement {
   return (

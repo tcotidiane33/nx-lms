@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import type { ReactElement } from 'react';
-import './course-description.scss';
+import './course-description.css';
 
 export function CourseDescription():ReactElement {
   return (

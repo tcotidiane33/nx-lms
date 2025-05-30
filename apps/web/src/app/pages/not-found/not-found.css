@@ -1,0 +1,40 @@
+
+/* </thought>
+
+**Outlining the Refactoring**
+
+I've now broken down the structure into individual selectors. I've also identified the corresponding properties for each selector, including those within the media query. My next step is to begin rewriting the styles, paying close attention to the variable syntax in the media query. I'll convert the SCSS-style variables to standard CSS variables.
+
+
+**Formulating a Strategy**
+
+I've mapped the parent-child relationships and will flatten the selectors for each rule. I'm going to incorporate the properties of the nested selectors into the new, flattened selectors. My primary concern right now is to accurately translate the SCSS-style variables into standard CSS variable syntax, and rewriting the rules.@import '../../globals/var'; */
+
+
+.not-found-section .not-found-box__title {
+    font-size: 2.5rem;
+    margin: 0 0 30px;
+    font-weight: 600;
+    text-align: center;
+    color: var(--main-color);
+}
+.not-found-section .not-found-box__button {
+    display: flex;
+    justify-content: center;
+}
+.not-found-section .not-found-box__button button {
+    margin-top: 1.5rem;
+    height: 3rem;
+}
+
+.not-found-section .not-found-box p {
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+@media (max-width: var(--medium-width)) {
+    .login-form__title {
+        font-size: 1.375rem !important;
+    }
+}

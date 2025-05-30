@@ -1,7 +1,7 @@
 import type { ReactElement } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import type { IContactItemProperties } from './contact-item-interface';
-import './contact-item.scss';
+import './contact-item.css';
 
 export function ContactItem({ icon, title, description }: IContactItemProperties):ReactElement {
   return (

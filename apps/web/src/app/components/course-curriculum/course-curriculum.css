@@ -1,0 +1,118 @@
+/* // @import '../../globals/var'; */
+
+.accordion-item {
+    border-color: var(--border-color-1) !important;
+    background-color: transparent !important;
+}
+
+.accordion-header button {
+    border-color: var(--border-color-1) !important;
+    background-color: transparent !important;
+    color: var(--black-90);
+    font-weight: 300;
+    flex-wrap: wrap;
+}
+
+.accordion-header button:not(.collapsed) {
+    color: var(--black-90);
+    font-weight: 600;
+    transition: none;
+    box-shadow: none;
+    border-bottom: 1px solid var(--border-color-1);
+}
+
+.accordion-header button:not(.collapsed)::after {
+    background-image: none !important;
+    transform: rotate(-137deg) !important;
+    margin-top: 6px;
+}
+
+.accordion-header button:not(.collapsed) span {
+    font-weight: 600;
+}
+
+.accordion-header button::after {
+    margin-right: auto;
+    margin-left: 0;
+    border: solid var(--black-90);
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg) !important;
+    background-image: none;
+    width: 10px;
+    height: 10px;
+    margin-top: -6px;
+}
+
+.accordion-header button span {
+    position: absolute;
+    left: 50px;
+    font-size: 0.875rem;
+}
+
+.accordion-header button:focus {
+    box-shadow: none !important;
+}
+
+.accordion-body {
+    text-align: justify;
+}
+
+.accordion-body li {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    position: relative;
+    color: var(--black-90);
+}
+
+.accordion-body li span {
+    position: absolute;
+    font-size: 0.875rem;
+    left: 0;
+    top: 13px;
+}
+
+.accordion-body li svg,
+.accordion-body li span {
+    margin: 0 0.25rem;
+}
+
+@media (max-width: var(--medium-width)) {
+    .accordion-header button {
+        padding-left: 15px;
+        text-align: right;
+    }
+
+    .accordion-header button span {
+        position: relative;
+        left: auto;
+        font-size: 0.75rem;
+        width: 100%;
+        margin-top: 8px;
+        text-align: right;
+    }
+
+    .accordion-body li {
+        padding: 0 0px 24px 0;
+    }
+
+    .accordion-body li span {
+        position: absolute;
+        right: 20px;
+        font-size: 0.75rem;
+        margin-top: 14px;
+        text-align: right;
+    }
+
+    .accordion-body li:not(:last-child) {
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: var(--small-width)) {
+    .accordion-body li {
+        font-size: .875rem;
+    }
+}

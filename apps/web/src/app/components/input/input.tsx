@@ -2,12 +2,12 @@
 /* eslint-disable max-len */
 /* eslint-disable @typescript-eslint/no-unnecessary-condition */
 /* eslint-disable react/jsx-props-no-spreading */
-import type { ISelectOption } from '@globals/interface';
+import type { ISelectOption } from '../../globals/interface';
 import type { ReactElement } from 'react';
 import { useId } from 'react';
 
 import type { IInputProperties } from './input-interface';
-import './input.sass';
+import './input.css';
 
 export function Input(properties: IInputProperties): ReactElement {
   const {
@@ -19,7 +19,7 @@ export function Input(properties: IInputProperties): ReactElement {
     ...restProperties
   } = properties;
 
-  const className: string = 'input';
+  const className = 'input';
 
   if (type === 'select') {
     return (
@@ -27,7 +27,7 @@ export function Input(properties: IInputProperties): ReactElement {
         {options?.map((option: ISelectOption): ReactElement => {
           const { value, text } = option;
           return (
-            <option key={useId()} value={value} defaultValue={value === restProperties.value ? value : undefined}>
+            <option key={value} value={value} defaultValue={value === restProperties.value ? value : undefined}>
               {text}
             </option>
           );
@@ -44,7 +44,7 @@ export function Input(properties: IInputProperties): ReactElement {
           const inputName = `radio-input${id ?? ''}`;
           return (
             <input
-              key={useId()}
+              key={value}
               type={type}
               id={id}
               defaultChecked={restProperties.value === value}
