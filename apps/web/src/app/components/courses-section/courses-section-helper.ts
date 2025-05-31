@@ -1,6 +1,6 @@
-import CoursesData from '@data/courses.json';
-import type { ISetState } from '@globals/interface';
-import type { ICourseItemProperties } from '@components/courses-item/courses-item-interface';
+import CoursesData from '../../data/courses.json';
+import { ISetState } from '../../globals/interface';
+import { ICourseItemProperties } from '../courses-item/courses-item-interface';
 import type { ICoursesSectionState } from './courses-section-interface';
 
 export function coursesSectionHelper(

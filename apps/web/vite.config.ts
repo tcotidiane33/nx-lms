@@ -1,5 +1,6 @@
-/// <reference types='vitest' />
-import { defineConfig, splitVendorChunkPlugin } from 'vite';
+// vite.config.ts
+// / <reference types='vitest' />
+import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 // Ensure @nx/vite is installed to resolve this import
 // The import path for vite-tsconfig-paths plugin is typically '@nx/vite/plugins/vite-tsconfig-paths.plugin'
@@ -9,32 +10,35 @@ import react from '@vitejs/plugin-react';
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 import path from 'path';
 
-// @ts-ignore
-export default defineConfig(() => ({
+export default defineConfig({
   root: __dirname,
   cacheDir: '../../node_modules/.vite/apps/web',
   server: {
     port: 4200,
     host: 'localhost',
+    fs: {
+      allow: ['../../'],
+    },
   },
   preview: {
     port: 4300,
     host: 'localhost',
   },
-  plugins: [react(), splitVendorChunkPlugin(), nxViteTsPaths({
-    root: '../../' // Chemin vers la racine du workspace
-  })
-  ],
-  // Uncomment this if you are using workers.
-  // worker: {
-  //  plugins: [ nxViteTsPaths() ],
-  // },
+  plugins: [react(), nxViteTsPaths()],
   build: {
     outDir: './dist',
     emptyOutDir: true,
     reportCompressedSize: true,
     commonjsOptions: {
       transformMixedEsModules: true,
+    },
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          react: ['react', 'react-dom'],
+          vendor: ['lodash', 'axios'],
+        },
+      },
     },
   },
   test: {
@@ -48,7 +52,6 @@ export default defineConfig(() => ({
       provider: 'v8' as const,
     }
   },
-
   resolve: {
     alias: {
       '@globals': path.resolve(__dirname, './src/app/globals'),
@@ -61,17 +64,21 @@ export default defineConfig(() => ({
       '@types': path.resolve(__dirname, './src/app/types'),
       '@contexts': path.resolve(__dirname, './src/app/contexts'),
       '@store': path.resolve(__dirname, './src/app/store'),
-
-      // ... vos autres alias
     },
   },
-
   css: {
+    postcss: path.resolve(__dirname, 'postcss.config.js'),
     preprocessorOptions: {
       scss: {
         additionalData: `@import "${path.resolve(__dirname, './src/app/globals/_var.css')}";`,
       },
     },
+    modules: {
+      generateScopedName: '[name]__[local]___[hash:base64:5]',
+      localsConvention: 'camelCaseOnly' as const,
+    },
   },
-
-}));
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'tailwindcss'],
+  },
+});

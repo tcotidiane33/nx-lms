@@ -1,7 +1,8 @@
-// eslint.config.mjsimport eslint from '@eslint/js';
+// eslint.config.mjs;
 import eslint from '@eslint/js';
 import nxPlugin from '@nx/eslint-plugin';
 import eslintPluginImport from 'eslint-plugin-import';
+import tailwindPlugin from 'eslint-plugin-tailwindcss';
 
 export default [
   eslint.configs.recommended,
@@ -30,6 +31,7 @@ export default [
   {
     plugins: {
       import: eslintPluginImport,
+      tailwindcss: tailwindPlugin,
     },
     rules: {
       '@nx/enforce-module-boundaries': [
@@ -46,26 +48,16 @@ export default [
           // allowImportingTsExtensions: true,
         },
       ],
+      // Optional Tailwind CSS rules
+      'tailwindcss/classnames-order': 'warn',
+      'tailwindcss/enforces-negative-arbitrary-values': 'warn',
+      'tailwindcss/enforces-shorthand': 'warn',
+      'tailwindcss/migration-from-tailwind-2': 'warn',
+      'tailwindcss/no-arbitrary-value': 'off',
+      'tailwindcss/no-custom-classname': 'warn',
+      'tailwindcss/no-contradicting-classname': 'error',
     },
-    /*
-    *  "rules": {
-      "@nx/enforce-module-boundaries": [
-        "error",
-        {
-          "allow": ["@assets/*"],
-
-          "enforceBuildableLibDependency": true,
-          "depConstraints": [
-            {
-              "sourceTag": "*",
-              "onlyDependOnLibsWithTags": ["*"]
-            }
-          ],
-          allowImportingTsExtensions: true,
-
-        }
-      ]
-    },*/
+    
 
     files: ['**/*.{ts,tsx,js,jsx,mjs,json}'],
     ignores: [
@@ -74,6 +66,7 @@ export default [
       '**/vitest.config.*.timestamp*',
     ],
   },
+
 ];
 
 

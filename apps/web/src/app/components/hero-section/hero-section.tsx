@@ -13,7 +13,7 @@ export function HeroSection(): ReactElement {
     <div className="hero-section">
       <BubbleAnimation />
       <div className="container">
-        <div className="row align-items-center">
+        <div className="row align-items-center ">
           <div className="col-md-6">
             <div className="hero__text">
               <h2 className="mb-3">Investir dans le savoir offre le meilleur retour</h2>

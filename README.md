@@ -110,7 +110,16 @@ And join the Nx community:
 - **ORM**: Utilize Prisma for efficient and type-safe database access.
 - **Database**: Benefit from MySQL database management with Aiven.
 
-
+```bash
+# Structure NX optimale
+apps/
+├── admin/    # Next.js
+├── web/      # React/Remix
+└── api/      # NestJS
+libs/
+├── shared/   # DTOs Typescript
+└── lms/      # Core business logic
+```
 
 ```sh
 

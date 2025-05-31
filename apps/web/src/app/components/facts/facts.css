@@ -1,6 +1,19 @@
 .box{
     background-color: var(--white);
+    /* background-color: aquamarine; */
     border-radius: 5px;
     box-shadow: var(--shadow);
     padding: 30px;
+    /* display: flex; */
+
+
+}
+
+.facts-section .box .row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    /* border: 2px solid salmon; */
 }

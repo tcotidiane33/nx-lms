@@ -1,5 +1,5 @@
 import type { ReactElement } from 'react';
-import './bubble-animation.css';
+import './BubbleAnimation.css';
 
 export function BubbleAnimation(): ReactElement {
   return (

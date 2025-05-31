@@ -1,4 +1,4 @@
-import type { ICourseItemProperties } from '@components/courses-item/courses-item-interface';
+import { ICourseItemProperties } from '../courses-item/courses-item-interface';
 
 export interface ICoursesSectionProperties {
     coursesCategory: string;

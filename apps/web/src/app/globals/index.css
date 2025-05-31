@@ -1,171 +1,171 @@
-/* @tailwind base;
-@tailwind components;
-@tailwind utilities; */
-
-@layer base {
-  /* Font faces */
-  @font-face {
-    font-family: dana;
-    src: url("../assets/fonts/woff/dana-regular.woff") format("woff");
-    font-weight: 400;
-    font-display: swap;
-  }
-
-  @font-face {
-    font-family: dana;
-    src: url("../assets/fonts/woff/dana-regularitalic.woff") format("woff");
-    font-weight: 400;
-    font-style: italic;
-    font-display: swap;
-  }
-
-  @font-face {
-    font-family: dana;
-    src: url("../assets/fonts/woff/dana-bold.woff") format("woff");
-    font-weight: 700;
-    font-display: swap;
-  }
-
-  @font-face {
-    font-family: dana;
-    src: url("../assets/fonts/woff/dana-bolditalic.woff") format("woff");
-    font-weight: 700;
-    font-style: italic;
-    font-display: swap;
-  }
-
-  /* Styles de base */
-  body {
-    @apply font-dana bg-white text-black-70 text-base font-normal min-h-screen w-full;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    
-    &::-webkit-scrollbar {
-      @apply hidden;
-    }
-  }
-
-  body.t-dark {
-    @apply bg-gray-900 text-gray-200;
-    --select-box-bg-color: theme('colors.gray.800');
-    --border-color-1: theme('colors.gray.700');
-  }
-
-  a {
-    @apply text-orange hover:text-orange no-underline;
-  }
-
-  img {
-    @apply max-w-full;
-  }
-
-  ul {
-    @apply list-none m-0 p-0;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    @apply text-black-90 leading-tight;
-  }
-
-  h3 {
-    @apply text-xl;
-  }
-
-  ::selection {
-    @apply text-white bg-orange;
-  }
-
-  .row {
-    @apply rtl;
-  }
+/* Font faces */
+@font-face {
+  font-family: 'dana';
+  src: url('../assets/fonts/woff/dana-regular.woff') format('woff');
+  font-weight: 400;
+  font-display: swap;
 }
 
-@layer components {
-  /* Composants personnalisés */
-  .circular-img {
-    @apply max-w-[360px] mx-auto relative z-10;
-    
-    &__inner {
-      @apply text-center rounded-b-[180px] overflow-hidden;
-    }
-    
-    &__circle {
-      @apply w-[360px] h-[360px] absolute left-0 bottom-0 rounded-full;
-    }
-    
-    img {
-      @apply relative z-10;
-    }
-  }
-
-  .section-padding {
-    @apply py-15;
-  }
-
-  .slick-prev:before, .slick-next:before {
-    @apply text-orange text-2xl;
-  }
-
-  .next-arrow, .prev-arrow {
-    @apply absolute bottom-[-3rem] flex justify-center items-center w-full;
-    
-    svg {
-      @apply w-[25px] h-[25px] bg-orange text-white p-1 rounded-full;
-    }
-  }
-
-  .prev-arrow {
-    @apply right-[26px];
-  }
-
-  .next-arrow {
-    @apply left-[26px];
-  }
-
-  .breadcrumb-item+.breadcrumb-item::before {
-    @apply float-right pl-[var(--bs-breadcrumb-item-padding-x)];
-  }
+@font-face {
+  font-family: 'dana';
+  src: url('../assets/fonts/woff/dana-regularitalic.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
 }
 
-@layer utilities {
-  /* Responsive */
-  @media (max-width: 1024px) {
-    .circular-img {
-      @apply max-w-[280px];
-      
-      &__circle {
-        @apply w-[280px] h-[280px];
-      }
-      
-      img {
-        @apply max-w-[240px];
-      }
-    }
-  }
+@font-face {
+  font-family: 'dana';
+  src: url('../assets/fonts/woff/dana-bold.woff') format('woff');
+  font-weight: 700;
+  font-display: swap;
+}
 
-  @media (max-width: 768px) {
-    .box {
-      @apply px-[15px] py-5;
-    }
-    
-    h3 {
-      @apply text-lg;
-    }
-  }
+@font-face {
+  font-family: 'dana';
+  src: url('../assets/fonts/woff/dana-bolditalic.woff') format('woff');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
 
-  @media (max-width: 640px) {
-    .circular-img {
-      @apply max-w-[230px];
-      
-      &__circle {
-        @apply w-[230px] h-[230px];
-      }
-      
-      img {
-        @apply max-w-[200px];
-      }
-    }
-  }
+/* Base styles */
+body {
+  font-family: 'dana', sans-serif;
+  background-color: white;
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 1rem;
+  font-weight: normal;
+  min-height: 100vh;
+  width: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body.t-dark {
+  background-color: #1a202c; /* Tailwind's gray-900 */
+  color: #edf2f7; /* Tailwind's gray-200 */
+}
+
+body.t-dark {
+  --select-box-bg-color: #2d3748; /* Tailwind's gray-800 */
+  --border-color-1: #4a5568; /* Tailwind's gray-700 */
+}
+
+a {
+  color: #dd6b20; /* Tailwind's orange */
+  text-decoration: none;
+}
+
+a:hover {
+  color: #dd6b20; /* Tailwind's orange */
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: rgba(0, 0, 0, 0.9);
+  line-height: 1.25;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+::selection {
+  background-color: #dd6b20; /* Tailwind's orange */
+  color: white;
+}
+
+.row {
+  direction: rtl;
+}
+
+
+/* Custom components */
+.circular-img {
+  max-width: 360px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  z-index: 10;
+}
+
+.circular-img__inner {
+  text-align: center;
+  border-bottom-left-radius: 180px;
+  border-bottom-right-radius: 180px;
+  overflow: hidden;
+}
+
+.circular-img__circle {
+  width: 360px;
+  height: 360px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-radius: 50%;
+}
+
+.circular-img img {
+  position: relative;
+  z-index: 10;
+}
+
+.section-padding {
+  padding-top: 3.75rem;
+  padding-bottom: 3.75rem;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: #dd6b20; /* Tailwind's orange */
+  font-size: 1.5rem;
+}
+
+.next-arrow,
+.prev-arrow {
+  position: absolute;
+  bottom: -3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.next-arrow svg,
+.prev-arrow svg {
+  width: 25px;
+  height: 25px;
+  background-color: #dd6b20; /* Tailwind's orange */
+  color: white;
+  padding: 0.25rem;
+  border-radius: 50%;
+}
+
+.prev-arrow {
+  right: 26px;
+}
+
+.next-arrow {
+  left: 26px;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  float: right;
+  padding-left: var(--bs-breadcrumb-item-padding-x);
 }
