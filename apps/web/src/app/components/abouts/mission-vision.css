@@ -1,0 +1,44 @@
+.mission-vision {
+    background-color: var(--about-primary-light);
+  }
+  
+  .mv-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  
+  .mv-card {
+    padding: 3rem 2rem;
+    border-radius: 0.5rem;
+    color: white;
+  }
+  
+  .mv-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+  }
+  
+  .mv-card p {
+    line-height: 1.6;
+    opacity: 0.9;
+  }
+  
+  .mission {
+    background: linear-gradient(135deg, var(--about-primary), #6366f1);
+  }
+  
+  .vision {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  }
+  
+  @media (max-width: 768px) {
+    .mv-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .mv-card {
+      padding: 2rem 1.5rem;
+    }
+  }

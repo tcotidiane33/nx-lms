@@ -17,7 +17,7 @@ import 'swiper/css/navigation';
 import './testimonials.css';
 import type { Swiper as SwiperClass } from 'swiper/types';
 
-export function Testimonials():ReactElement {
+export function Testimonials(): ReactElement {
   const [state, setState] = useState<ITestimonialsState>({
     activeTestimonialIndex: 0,
   });
@@ -41,46 +41,51 @@ export function Testimonials():ReactElement {
   };
 
   return (
-    <div className="testimonials-section section-padding">
+    <section className="testimonials-section section-padding bg-gray-50">
       <DecorationCircles />
       <DecorationImgs testimonialsData={testimonialsData} />
-      <div className="container">
-        <div className="row justify-content-center">
-          <div className="col-md-8">
-            <div className="section-title text-center">
-              <h2 className="title">Témoignages d'étudiants</h2>
-              <p className="sub-title">Ce qu'ils disent de nous</p>
-            </div>
-          </div>
+      <div className="container mx-auto px-4">
+        <div className="max-w-3xl mx-auto text-center mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">Témoignages d'étudiants</h2>
+          <p className="text-lg text-gray-600">Ce qu'ils disent de nous</p>
         </div>
-        <div className="row justify-content-center">
-          <div className="col-md-8 col-lg-6">
-            <div className="img-box rounded-circle">
-              <img src={testimonialsData[activeTestimonialIndex].avatar} className="w-100 rounded-circle js-testimonial-img" alt="student pic" />
-            </div>
-            <Swiper {...swiperSettings}>
-              {
-                testimonialsData.map((testimonial) => {
-                  const { name, role, avatar, comment } = testimonial;
 
-                  return (
-                    <SwiperSlide key={useId()}>
-                      <TestimonialsItem
-                        name={name}
-                        role={role}
-                        avatar={avatar}
-                        comment={comment}
-                      />
-                    </SwiperSlide>
-                  );
-                })
-              }
-              <div className="swiper-button-prev"></div>
-              <div className="swiper-button-next"></div>
-            </Swiper>
+        <div className="max-w-4xl mx-auto">
+          <div className="relative">
+            <div className="w-32 h-32 mx-auto mb-8 overflow-hidden rounded-full shadow-lg">
+              <img
+                src={testimonialsData[activeTestimonialIndex].avatar}
+                className="w-full h-full object-cover"
+                alt="student pic"
+              />
+            </div>
+
+            <div className="relative bg-white rounded-xl shadow-lg p-8">
+              <Swiper {...swiperSettings}>
+                <div className="swiper-wrapper">
+
+                  {testimonialsData.map((testimonial, index) => {
+                    const { name, role, avatar, comment } = testimonial;
+                    return (
+                      <SwiperSlide key={index}>
+                        <TestimonialsItem
+                          name={name}
+                          role={role}
+                          avatar={avatar}
+                          comment={comment}
+                        />
+                      </SwiperSlide>
+                    );
+                  })}
+                </div>
+
+                <div className="swiper-button-prev text-primary-600 absolute top-1/2 -translate-y-1/2 left-0 z-10 bg-white/80 hover:bg-white p-2 rounded-r-lg shadow-md"></div>
+                <div className="swiper-button-next text-primary-600 absolute top-1/2 -translate-y-1/2 right-0 z-10 bg-white/80 hover:bg-white p-2 rounded-l-lg shadow-md"></div>
+              </Swiper>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

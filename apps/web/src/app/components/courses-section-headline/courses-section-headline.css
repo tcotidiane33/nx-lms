@@ -1,14 +1,38 @@
-/* @import '../../globals/var'; */
 .section-title {
     text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
 }
+
 .section-title .title {
     font-size: 1.25rem;
     color: var(--main-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
 }
+
 .section-title .sub-title {
     font-size: 2.1875rem;
-    font-weight: 600;
+    font-weight: 700;
+    color: #2d3748;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title .sub-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background-color: var(--main-color);
+    border-radius: 2px;
 }
 
 @media (max-width: var(--large-width)) {

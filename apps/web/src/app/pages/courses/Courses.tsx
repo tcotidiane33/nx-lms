@@ -34,7 +34,7 @@ export function Courses():ReactElement {
         keywords={['site éducatif', 'apprentissage en ligne']}
         language={Language.FR_FR}
       />
-      <BreadcrumbComponent />
+      {/* <BreadcrumbComponent /> */}
       <section className="course-section section-padding">
         <div className="container">
           <CoursesSectionHeadline

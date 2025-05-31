@@ -10,6 +10,8 @@ import { BecomeInstructor } from '@components/become-instructor/become-instructo
 import { CoursesSectionHeadline } from '@components/courses-section-headline/courses-section-headline';
 import { ShowAllCourses } from '@components/show-all-courses/show-all-courses';
 import { Spinner } from '@components/spinner/spinner';
+import { Menu } from '@components/menu/menu';
+import { Header } from '@components/header/header';
 
 export function Home(): ReactElement {
   return (
@@ -20,6 +22,7 @@ export function Home(): ReactElement {
             keywords={['site éducatif', 'apprentissage en ligne']}
             language={Language.FR_FR}
           />
+          <Header />
           <HeroSection />
           <Facts />
           <CoursesSectionHeadline

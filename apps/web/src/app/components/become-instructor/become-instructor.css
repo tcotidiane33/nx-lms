@@ -1,6 +1,154 @@
 
-.circular-img__circle {
+/* .circular-img__circle {
     background-color: var(--yellow-light);
     max-width: 100%;
     max-height: 100%;
+} */
+
+/* become-instructor.css */
+
+/* Styles de base pour la section */
+/* .bai-section {
+  position: relative;
+  padding: 5rem 0;
+  background-color: #f9fafb;
+} */
+
+/* Conteneur principal */
+/* .bai-section .container {
+  max-width: 1200px;
+} */
+
+/* Carte blanche */
+/* .bai-section .bg-white {
+  border-radius: 1rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 
+              0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bai-section .bg-white:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+} */
+
+/* Conteneur flex */
+/* .bai-section .flex {
+  gap: 2rem;
+} */
+
+/* Image container */
+/* .bai-section .w-80.h-80 {
+  position: relative;
+  width: 20rem;
+  height: 20rem;
+  margin: 0 auto;
+} */
+
+/* Cercle animé */
+/* .bai-section .absolute.inset-0 {
+  border-radius: 50%;
+  opacity: 0.5;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.5;
+  }
+} */
+
+/* Image */
+/* .bai-section .relative.w-full.h-full {
+  border-radius: 50%;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.bai-section .relative.w-full.h-full:hover {
+  box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.3);
+}
+
+.bai-section img {
+  transition: transform 0.5s ease;
+} */
+
+/* Contenu texte */
+/* .bai-section .text-center.md\:text-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.bai-section h2 {
+  font-size: 2rem;
+  line-height: 1.3;
+  color: #111827;
+  margin-bottom: 1rem;
+}
+
+.bai-section p.text-primary-600 {
+  font-size: 1.125rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+} */
+
+/* Bouton */
+.bai-section .pt-4 {
+  padding-top: 1.5rem;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .bai-section .w-80.h-80 {
+    width: 18rem;
+    height: 18rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .bai-section {
+    padding: 3rem 0;
+  }
+  
+  .bai-section .bg-white {
+    padding: 1.5rem;
+  }
+  
+  .bai-section h2 {
+    font-size: 1.75rem;
+  }
+  
+  .bai-section .w-80.h-80 {
+    width: 16rem;
+    height: 16rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .bai-section h2 {
+    font-size: 1.5rem;
+  }
+  
+  .bai-section .w-80.h-80 {
+    width: 14rem;
+    height: 14rem;
+  }
+  
+  .bai-section p.text-primary-600 {
+    font-size: 1rem;
+  }
 }

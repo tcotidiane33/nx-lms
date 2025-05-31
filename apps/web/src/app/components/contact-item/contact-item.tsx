@@ -3,14 +3,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import type { IContactItemProperties } from './contact-item-interface';
 import './contact-item.css';
 
-export function ContactItem({ icon, title, description }: IContactItemProperties):ReactElement {
+export function ContactItem({ icon, title, description }: IContactItemProperties): ReactElement {
   return (
     <div className="contact-item">
-      <div className="icon-box">
-        <FontAwesomeIcon icon={icon} />
+      <div className="contact-item__icon">
+        <FontAwesomeIcon icon={icon} className="contact-icon" />
       </div>
-      <h3>{title}</h3>
-      <p>{description}</p>
+      <div className="contact-item__content">
+        <h3 className="contact-item__title">{title}</h3>
+        <p className="contact-item__description">{description}</p>
+      </div>
     </div>
   );
 }

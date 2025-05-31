@@ -1,25 +1,33 @@
 import { Button } from '../button/button';
-import  BannerImage  from '../../assets/img/banner-img.png';
+import BannerImage from '../../assets/img/banner-img.png';
 import type { ReactElement } from 'react';
 import { BubbleAnimation } from '../bubble-animation/bubble-animation';
 import './hero-section.css';
-// import { useNavigate } from 'react-router-dom';
-// import type { NavigateFunction } from 'react-router-dom';
 
 export function HeroSection(): ReactElement {
-  // const navigate: NavigateFunction = useNavigate();
-
   return (
     <div className="hero-section">
       <BubbleAnimation />
-      <div className="container">
-        <div className="row align-items-center ">
-          <div className="col-md-6">
-            <div className="hero__text">
-              <h2 className="mb-3">Investir dans le savoir offre le meilleur retour</h2>
-              <h1 className="mb-3">Kondro Networks site éducatif (NX NestJs + ReactJs + TS)</h1>
-              <p className="mb-4">Pour voir le code source du template sur GitHub, cliquez sur le bouton ci-dessous</p>
-              <a href="https://github.com/tcotidiane33/nx-lms" target="_blank" rel="noreferrer" style={{backgroundColor:"blue"}}>
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col md:flex-row items-center gap-8 py-12">
+          {/* Left Column - Text Content */}
+          <div className="w-full md:w-1/2">
+            <div className="space-y-6">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-800">
+                Investir dans le savoir offre le meilleur retour
+              </h2>
+              <h1 className="text-3xl md:text-4xl font-bold text-primary-600">
+                Kondro Networks site éducatif (NX NestJs + ReactJs + TS)
+              </h1>
+              <p className="text-lg text-gray-600">
+                Pour voir le code source du template sur GitHub, cliquez sur le bouton ci-dessous
+              </p>
+              <a 
+                href="https://github.com/tcotidiane33/nx-lms" 
+                target="_blank" 
+                rel="noreferrer"
+                className="inline-block"
+              >
                 <Button
                   text="source code"
                   onClick={() => console.log('if you want navigate to another page use navigate function')}
@@ -28,12 +36,18 @@ export function HeroSection(): ReactElement {
               </a>
             </div>
           </div>
-          <div className="col-md-6 order-first order-md-last mb-5 mb-md-0">
-            <div className="hero__img">
-              <div className="circular-img">
-                <div className="circular-img__inner">
-                  <div className="circular-img__circle" />
-                  <img src={BannerImage} alt="banner" />
+
+          {/* Right Column - Image */}
+          <div className="w-full md:w-1/2">
+            <div className="relative">
+              <div className="w-96 h-96 mx-auto">
+                <div className="absolute inset-0 rounded-full bg-primary-100 animate-pulse" />
+                <div className="relative w-full h-full rounded-full overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
+                  <img 
+                    src={BannerImage} 
+                    alt="banner" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
             </div>

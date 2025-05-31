@@ -26,6 +26,7 @@ module.exports = {
         // Couleurs de base
         transparent: "transparent",
         current: "currentColor",
+        
 
         // Palette noire et grise améliorée
         black: {
