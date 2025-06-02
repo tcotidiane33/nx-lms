@@ -1,30 +1,78 @@
-import { Body, Controller, Post, Get, Req } from '@nestjs/common';
-import { ApiTags, ApiBody, ApiOkResponse } from '@nestjs/swagger';
+import { Body, Controller, Post, Get, Req, UseGuards, Res, HttpCode, HttpStatus } from '@nestjs/common';
+import { ApiTags, ApiBody, ApiOkResponse, ApiOperation, ApiBearerAuth, ApiUnauthorizedResponse, ApiConflictResponse, ApiCreatedResponse } from '@nestjs/swagger';
 import { AuthService } from './auth.service';
 import { LoginDto } from './dto/login.dto';
 import { RegisterDto } from './dto/register.dto';
+import { AuthGuard } from '@nestjs/passport';
+import { LocalAuthGuard } from '../../guards/local-auth.guard';
+import { JwtAuthGuard } from '../../guards/jwt-auth.guard';
+import { Request, Response } from 'express';
+import { User } from '../users/entities/user.entity';
+import { LoginResponseDto } from './dto/login-response.dto';
 
-@ApiTags('auth')
+@ApiTags('Authentication')
 @Controller('auth')
 export class AuthController {
-  constructor(private authService: AuthService) {}
+  constructor(private readonly authService: AuthService) {}
 
   @Post('login')
+  @HttpCode(HttpStatus.OK)
+  @UseGuards(LocalAuthGuard)
+  @ApiOperation({ summary: 'User login' })
   @ApiBody({ type: LoginDto })
-  @ApiOkResponse({ description: 'Returns JWT and user' })
-  async login(@Body() body: LoginDto) {
-    return this.authService.login(body.email, body.password);
+  @ApiOkResponse({ 
+    description: 'User successfully logged in', 
+    type: LoginResponseDto 
+  })
+  @ApiUnauthorizedResponse({ description: 'Invalid credentials' })
+  async login(
+    @Req() req: Request,
+    @Res({ passthrough: true }) res: Response
+  ) {
+    const result = await this.authService.login(req.user);
+    
+    // Set secure HTTP-only cookie
+    res.cookie('access_token', result.access_token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'strict',
+      maxAge: 3600000 // 1 hour
+    });
+    
+    return result;
   }
 
   @Post('register')
+  @HttpCode(HttpStatus.CREATED)
+  @ApiOperation({ summary: 'User registration' })
   @ApiBody({ type: RegisterDto })
-  @ApiOkResponse({ description: 'Returns JWT and user' })
-  async register(@Body() body: RegisterDto) {
-    return this.authService.register(body.email, body.password, body.name);
+  @ApiCreatedResponse({ 
+    description: 'User successfully registered',
+    type: LoginResponseDto 
+  })
+  @ApiConflictResponse({ description: 'Email already exists' })
+  async register(@Body() registerDto: RegisterDto) {
+    return this.authService.register(registerDto);
   }
 
-  @Get('login')
-  async loginGet(@Req() req: Request) {
-    return this.authService.login(req.body.email, req.body.password);
+  @Post('logout')
+  @HttpCode(HttpStatus.OK)
+  @UseGuards(JwtAuthGuard)
+  @ApiOperation({ summary: 'User logout' })
+  @ApiBearerAuth()
+  @ApiOkResponse({ description: 'Successfully logged out' })
+  async logout(@Res({ passthrough: true }) res: Response) {
+    res.clearCookie('access_token');
+    return { message: 'Logout successful' };
+  }
+
+  @Get('me')
+  @UseGuards(JwtAuthGuard)
+  @ApiBearerAuth()
+  @ApiOperation({ summary: 'Get current user profile' })
+  @ApiOkResponse({ description: 'Returns current user', type: User })
+  @ApiUnauthorizedResponse({ description: 'Unauthorized' })
+  async getProfile(@Req() req: Request) {
+    return req.user;
   }
 }

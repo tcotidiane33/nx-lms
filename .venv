@@ -4,6 +4,10 @@ DATABASE_URL="postgresql://postgres:postgres@localhost:5432/nxlmsdb"
 # Pour NestJS
 JWT_SECRET="supersecret"
 PORT=3333
+JWT_ACCESS_SECRET=your_strong_access_secret
+JWT_REFRESH_SECRET=your_strong_refresh_secret
+JWT_ACCESS_EXPIRATION=15m
+JWT_REFRESH_EXPIRATION=7d
 
 # Pour React (variables accessibles côté client)
 REACT_APP_API_URL="http://localhost:3333"

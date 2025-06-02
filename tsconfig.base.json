@@ -36,7 +36,8 @@
       "@hooks/*": ["apps/web/src/app/hooks/*"],
       "@utils/*": ["apps/web/src/app/utils/*"],
       "@types/*": ["apps/web/src/app/types/*"],
-      "@nx/eslint-plugin": ["node_modules/@nx/eslint-plugin"]
+      "@nx/eslint-plugin": ["node_modules/@nx/eslint-plugin"],
+      "@lmsrepo/prisma": ["../../../../../../generated/prisma"]
     }
 
     // @lmsrepo/prisma = ../../../../../../generated/prisma

@@ -17,10 +17,9 @@ export function SignUp(): ReactElement {
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-
-    // Basic validation (optional, can be enhanced)
+    // Validation des champs avec des messages plus amicaux
     if (!name || !email || !password) {
-      alert('Please fill in all fields');
+      alert('Hey ! Il manque quelques informations 😊\nN\'oublie pas de remplir tous les champs pour commencer l\'aventure !');
       return;
     }
 
@@ -36,15 +35,16 @@ export function SignUp(): ReactElement {
       const data = await response.json();
 
       if (response.ok) {
-        console.log('Signup successful:', data);
-        // Redirect or show success message
+        console.log('Inscription réussie:', data);
+        alert('🎉 Bienvenue dans l\'aventure ! Ton compte a été créé avec succès !');
+        // Redirection ou affichage du message de succès
       } else {
-        console.error('Signup failed:', data);
-        alert(data.message || 'Signup failed');
+        console.error('Échec de l\'inscription:', data);
+        alert(data.message || 'Oups ! Quelque chose s\'est mal passé lors de l\'inscription. Réessaie ! 🤔');
       }
     } catch (error) {
-      console.error('Error during signup:', error);
-      alert('An error occurred during signup.');
+      console.error('Erreur lors de l\'inscription:', error);
+      alert('Oups ! Une erreur inattendue s\'est produite. Ne t\'inquiète pas, nos équipes sont sur le coup ! 🛠️');
     }
   };
 
