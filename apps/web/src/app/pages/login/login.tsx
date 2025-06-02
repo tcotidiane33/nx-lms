@@ -1,4 +1,4 @@
-import { Suspense } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { SEO } from '../../components/seo/seo';
 import type { ReactElement } from 'react';
 import { BreadcrumbComponent } from '../../components/breadcrumb/breadcrumb';
@@ -10,6 +10,22 @@ import { Button } from '../../components/button/button';
 import './login.css';
 
 export function LogIn(): ReactElement {
+  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+
+  useEffect(() => {
+    // Check system preference
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    setTheme(prefersDark ? 'dark' : 'light');
+
+    // Listen for system theme changes
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const handleChange = (e: MediaQueryListEvent) => {
+      setTheme(e.matches ? 'dark' : 'light');
+    };
+    mediaQuery.addEventListener('change', handleChange);
+    return () => mediaQuery.removeEventListener('change', handleChange);
+  }, []);
+
   return (
     <Suspense fallback={<Spinner />}>
       <SEO
@@ -19,7 +35,7 @@ export function LogIn(): ReactElement {
         language={Language.FR_FR}
       />
       <BreadcrumbComponent />
-      <section className="login-section">
+      <section className={`login-section ${theme}`}>
         <div className="login-container">
           <div className="login-card">
             <div className="login-header">

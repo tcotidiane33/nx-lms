@@ -10,6 +10,7 @@ import { Contact } from "@pages/contact/contact";
 import { NotFound } from "@pages/not-found/not-found";
 import { About } from '@pages/about/About';
 import MasterLayout from '../layouts/MasterLayout';
+import { Profile } from '@pages/profile/Profile';
 
 export default function AppRouter() {
   return (
@@ -23,6 +24,7 @@ export default function AppRouter() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/about" element={<About />} />
+        <Route path="/profile" element={<Profile />} />
       </Route>
       {/* /* Master Routes */ }
       <Route element={<MasterLayout />}>

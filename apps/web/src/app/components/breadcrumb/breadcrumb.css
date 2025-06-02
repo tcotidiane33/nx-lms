@@ -1,87 +1,128 @@
 /* Variables */
 :root {
-    --breadcrumb-bg: #f8f9fa;
-    --breadcrumb-text: #6c757d;
-    --breadcrumb-active: #495057;
-    --breadcrumb-hover: #007bff;
-    --breadcrumb-separator: #6c757d;
-  }
-  
-  /* Container */
+  --breadcrumb-bg: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  --breadcrumb-card-bg: rgba(255, 255, 255, 0.1);
+  --breadcrumb-primary: #0230ff;
+  --breadcrumb-primary-hover: #4facfe;
+  --breadcrumb-text: #ffffff;
+  --breadcrumb-text-light: #a0aec0;
+  --breadcrumb-border: rgba(255, 255, 255, 0.1);
+  --breadcrumb-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  --breadcrumb-glow: 0 0 20px rgba(0, 242, 254, 0.5);
+}
+
+/* Container */
+.breadcrumb-nav {
+  background: var(--breadcrumb-card-bg);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--breadcrumb-border);
+  border-radius: 1rem;
+  box-shadow: var(--breadcrumb-shadow);
+  padding: 1rem;
+  font-size: 0.875rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.breadcrumb-nav::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(0, 242, 254, 0.1),
+    transparent
+  );
+  transform: rotate(45deg);
+  animation: shine 3s infinite;
+}
+
+.breadcrumb-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Liste */
+.breadcrumb-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/* Items */
+.breadcrumb-item {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb-item.active {
+  color: var(--breadcrumb-primary);
+  font-weight: 500;
+  text-shadow: var(--breadcrumb-glow);
+}
+
+/* Liens */
+.breadcrumb-link {
+  display: flex;
+  align-items: center;
+  color: var(--breadcrumb-text-light);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.breadcrumb-link:hover {
+  color: var(--breadcrumb-primary);
+  text-shadow: var(--breadcrumb-glow);
+  transform: translateY(-1px);
+}
+
+.breadcrumb-link span {
+  margin-left: 0.5rem;
+}
+
+/* Icône */
+.breadcrumb-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--breadcrumb-primary);
+  filter: drop-shadow(0 0 5px var(--breadcrumb-primary));
+  transition: all 0.3s ease;
+}
+
+/* Séparateur */
+.breadcrumb-separator {
+  margin: 0 0.5rem;
+  color: var(--breadcrumb-text-light);
+  opacity: 0.5;
+}
+
+/* Animations */
+@keyframes shine {
+  0% { transform: translateX(-100%) rotate(45deg); }
+  100% { transform: translateX(100%) rotate(45deg); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
   .breadcrumb-nav {
-    background-color: var(--breadcrumb-bg);
-    padding: 1rem 0;
-    font-size: 0.875rem;
-  }
-  
-  .breadcrumb-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-  }
-  
-  /* Liste */
-  .breadcrumb-list {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-  }
-  
-  /* Items */
-  .breadcrumb-item {
-    display: flex;
-    align-items: center;
-  }
-  
-  .breadcrumb-item.active {
-    color: var(--breadcrumb-active);
-    font-weight: 500;
-  }
-  
-  /* Liens */
-  .breadcrumb-link {
-    display: flex;
-    align-items: center;
-    color: var(--breadcrumb-text);
-    text-decoration: none;
-    transition: color 0.2s ease;
-  }
-  
-  .breadcrumb-link:hover {
-    color: var(--breadcrumb-hover);
+    padding: 0.75rem;
   }
   
   .breadcrumb-link span {
-    margin-left: 0.5rem;
+    display: none;
   }
   
-  /* Icône */
   .breadcrumb-icon {
-    width: 1rem;
-    height: 1rem;
-    color: currentColor;
+    margin-right: 0;
   }
-  
-  /* Séparateur */
-  .breadcrumb-separator {
-    margin: 0 0.5rem;
-    color: var(--breadcrumb-separator);
-  }
-  
-  /* Responsive */
-  @media (max-width: 768px) {
-    .breadcrumb-nav {
-      padding: 0.75rem 0;
-    }
-    
-    .breadcrumb-link span {
-      display: none;
-    }
-    
-    .breadcrumb-icon {
-      margin-right: 0;
-    }
-  }
+}

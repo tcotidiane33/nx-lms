@@ -1,0 +1,66 @@
+.cyber-toggle.cyberpunk {
+  display: flex;
+  align-items: center;
+}
+
+.cyber-toggle.cyberpunk label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.cyber-toggle.cyberpunk input {
+  display: none;
+}
+
+.cyber-toggle.cyberpunk .toggle-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(226, 243, 242, 0.6);
+  transition: all 0.3s ease;
+  width: 40px;
+  text-align: center;
+}
+
+.cyber-toggle.cyberpunk .toggle-slider {
+  width: 50px;
+  height: 24px;
+  background: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(79, 209, 197, 0.5);
+  border-radius: 30px;
+  position: relative;
+  margin: 0 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.cyber-toggle.cyberpunk .toggle-slider::before {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(79, 209, 197, 0.5);
+  top: 2px;
+  left: 2px;
+  transition: all 0.3s ease;
+}
+
+.cyber-toggle.cyberpunk input:checked ~ label .toggle-slider {
+  background: rgba(79, 209, 197, 0.2);
+  border-color: #4fd1c5;
+}
+
+.cyber-toggle.cyberpunk input:checked ~ label .toggle-slider::before {
+  background: #4fd1c5;
+  transform: translateX(26px);
+  box-shadow: 0 0 10px rgba(79, 209, 197, 0.8);
+}
+
+.cyber-toggle.cyberpunk input:checked ~ label .toggle-label.left {
+  color: rgba(226, 243, 242, 0.3);
+}
+
+.cyber-toggle.cyberpunk input:checked ~ label .toggle-label.right {
+  color: #4fd1c5;
+}

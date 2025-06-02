@@ -1,0 +1,43 @@
+.stat-item.hologram {
+  position: relative;
+  padding: 1.5rem;
+  background: rgba(30, 41, 59, 0.3);
+  border-radius: 8px;
+  border: 1px solid rgba(79, 209, 197, 0.5);
+  box-shadow: 0 0 15px rgba(79, 209, 197, 0.2);
+  text-align: center;
+  overflow: hidden;
+}
+
+.stat-item.hologram .stat-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #4fd1c5, #a6ffcb);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.stat-item.hologram .stat-label {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgba(226, 243, 242, 0.8);
+}
+
+.hologram-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(79, 209, 197, 0.1) 0%,
+    rgba(79, 209, 197, 0) 20%,
+    rgba(79, 209, 197, 0) 80%,
+    rgba(79, 209, 197, 0.1) 100%
+  );
+  pointer-events: none;
+}

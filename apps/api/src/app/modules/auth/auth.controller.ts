@@ -1,4 +1,4 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Post, Get, Req } from '@nestjs/common';
 import { ApiTags, ApiBody, ApiOkResponse } from '@nestjs/swagger';
 import { AuthService } from './auth.service';
 import { LoginDto } from './dto/login.dto';
@@ -21,5 +21,10 @@ export class AuthController {
   @ApiOkResponse({ description: 'Returns JWT and user' })
   async register(@Body() body: RegisterDto) {
     return this.authService.register(body.email, body.password, body.name);
+  }
+
+  @Get('login')
+  async loginGet(@Req() req: Request) {
+    return this.authService.login(req.body.email, req.body.password);
   }
 }

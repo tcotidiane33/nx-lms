@@ -1,0 +1,54 @@
+.info-group.cyber {
+  margin-bottom: 1.5rem;
+}
+
+.info-group.cyber label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: rgba(226, 243, 242, 0.8);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.info-group.cyber .input-container {
+  position: relative;
+}
+
+.info-group.cyber .cyber-input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  background: rgba(30, 41, 59, 0.5);
+  border: 1px solid rgba(79, 209, 197, 0.3);
+  border-radius: 4px;
+  color: #e2f3f2;
+  font-family: 'Courier New', monospace;
+  transition: all 0.3s ease;
+}
+
+.info-group.cyber .cyber-input:focus {
+  outline: none;
+  border-color: #4fd1c5;
+  box-shadow: 0 0 0 2px rgba(79, 209, 197, 0.2);
+}
+
+.info-group.cyber .cyber-input[readonly] {
+  background: rgba(30, 41, 59, 0.3);
+  color: rgba(226, 243, 242, 0.6);
+  border-style: dashed;
+}
+
+.input-decoration {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #4fd1c5, transparent);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.cyber-input:focus ~ .input-decoration {
+  transform: scaleX(1);
+}

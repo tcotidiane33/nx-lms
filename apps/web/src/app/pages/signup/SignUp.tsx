@@ -1,6 +1,6 @@
-import { Suspense } from 'react';
-import { SEO } from '@components/seo/seo';
+import { Suspense, useState } from 'react';
 import type { ReactElement } from 'react';
+import { SEO } from '@components/seo/seo';
 import { Language } from '@globals/enum';
 import { BreadcrumbComponent } from '@components/breadcrumb/breadcrumb';
 import { Input } from '@components/input/input';
@@ -8,8 +8,46 @@ import { Button } from '@components/button/button';
 import { Spinner } from '@components/spinner/spinner';
 import { Link } from 'react-router-dom';
 import './signup.css';
+import React from 'react';
 
 export function SignUp(): ReactElement {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    // Basic validation (optional, can be enhanced)
+    if (!name || !email || !password) {
+      alert('Please fill in all fields');
+      return;
+    }
+
+    try {
+      const response = await fetch('/api/auth/signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, email, password }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        console.log('Signup successful:', data);
+        // Redirect or show success message
+      } else {
+        console.error('Signup failed:', data);
+        alert(data.message || 'Signup failed');
+      }
+    } catch (error) {
+      console.error('Error during signup:', error);
+      alert('An error occurred during signup.');
+    }
+  };
+
   return (
     <Suspense fallback={<Spinner />}>
       <SEO
@@ -27,18 +65,20 @@ export function SignUp(): ReactElement {
               <p className="signup-subtitle">Commencez votre parcours d'apprentissage</p>
             </div>
             
-            <form className="signup-form">
+            <form className="signup-form" onSubmit={handleSubmit}>
               <div className="form-group">
                 <Input
                   type="text"
                   placeholder="Nom complet"
                   className="signup-input"
-                  icon={
-                    <svg className="input-icon" viewBox="0 0 24 24">
-                      <path d="M12 12a4 4 0 100-8 4 4 0 000 8z"/>
-                      <path d="M5 20v-2a5 5 0 0110 0v2"/>
-                    </svg>
-                  }
+                  value={name}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value)}
+                  // icon={
+                  //   <svg className="input-icon" viewBox="0 0 24 24">
+                  //     <path d="M12 12a4 4 0 100-8 4 4 0 000 8z"/>
+                  //     <path d="M5 20v-2a5 5 0 0110 0v2"/>
+                  //   </svg>
+                  // }
                 />
               </div>
               
@@ -47,12 +87,14 @@ export function SignUp(): ReactElement {
                   type="email"
                   placeholder="Adresse email"
                   className="signup-input"
-                  icon={
-                    <svg className="input-icon" viewBox="0 0 24 24">
-                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                      <path d="M22 6l-10 7L2 6"/>
-                    </svg>
-                  }
+                  value={email}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
+                  // icon={
+                  //   <svg className="input-icon" viewBox="0 0 24 24">
+                  //     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  //     <path d="M22 6l-10 7L2 6"/>
+                  //   </svg>
+                  // }
                 />
               </div>
               
@@ -61,13 +103,15 @@ export function SignUp(): ReactElement {
                   type="password"
                   placeholder="Mot de passe"
                   className="signup-input"
-                  icon={
-                    <svg className="input-icon" viewBox="0 0 24 24">
-                      <path d="M12 15a2 2 0 100-4 2 2 0 000 4z"/>
-                      <path d="M19 15a7 7 0 11-14 0 7 7 0 0114 0z"/>
-                      <path d="M12 19a4 4 0 01-4-4v-2a4 4 0 014-4v10z"/>
-                    </svg>
-                  }
+                  value={password}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
+                  // icon={
+                  //   <svg className="input-icon" viewBox="0 0 24 24">
+                  //     <path d="M12 15a2 2 0 100-4 2 2 0 000 4z"/>
+                  //     <path d="M19 15a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                  //     <path d="M12 19a4 4 0 01-4-4v-2a4 4 0 014-4v10z"/>
+                  //   </svg>
+                  // }
                 />
                 <div className="password-requirements">
                   <p>Le mot de passe doit contenir :</p>
@@ -88,8 +132,7 @@ export function SignUp(): ReactElement {
               
               <Button
                 text="S'inscrire"
-                onClick={() => console.log('signup')}
-                className="signup-button"
+                onClick={handleSubmit}
               />
               
               <div className="signup-footer">

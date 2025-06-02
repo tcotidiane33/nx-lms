@@ -1,0 +1,39 @@
+.theme-selector.holographic {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.theme-selector.holographic .theme-option {
+  background: rgba(30, 41, 59, 0.3);
+  border: 1px solid rgba(79, 209, 197, 0.2);
+  border-radius: 6px;
+  padding: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 80px;
+}
+
+.theme-selector.holographic .theme-option:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(79, 209, 197, 0.2);
+}
+
+.theme-selector.holographic .theme-preview {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+  background: var(--theme-color);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 10px var(--theme-color);
+}
+
+.theme-selector.holographic span {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}

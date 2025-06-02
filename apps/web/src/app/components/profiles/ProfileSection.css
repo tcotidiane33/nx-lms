@@ -1,0 +1,30 @@
+.profile-section.futurist .section-header {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.profile-section.futurist h2 {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #4fd1c5;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+  background: rgba(30, 41, 59, 0.7);
+  padding: 0.5rem 1.5rem;
+  border-radius: 30px;
+  border: 1px solid #4fd1c5;
+  box-shadow: 0 0 15px rgba(79, 209, 197, 0.3);
+}
+
+.profile-section.futurist .section-decoration {
+  height: 2px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(79, 209, 197, 0.5) 20%, 
+    rgba(79, 209, 197, 0.8) 50%, 
+    rgba(79, 209, 197, 0.5) 80%, 
+    transparent 100%
+  );
+  margin-top: 0.5rem;
+}

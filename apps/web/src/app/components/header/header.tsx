@@ -5,6 +5,7 @@ import './header.css';
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false); // Add auth state
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,7 +27,7 @@ export function Header() {
 
   return (
     <header className={`header ${isScrolled ? 'header--scrolled' : ''}`}>
-      <div className="container mx-auto px-4 py-4 backdrop-blur-md bg-white/80">
+      <div className="container mx-auto px-4 py-2 backdrop-blur-md bg-white/80 rounded-lg">
         <div className="header__main">
           {/* Logo */}
           <div className="header__logo">
@@ -34,7 +35,6 @@ export function Header() {
               <span className="text-2xl font-bold text-gray-800">
                 KONDRO<span className="text-primary-600">NETWORKS</span>
               </span>
-
             </Link>
           </div>
 
@@ -72,12 +72,40 @@ export function Header() {
             >
               Contact
             </NavLink>
-            <NavLink to={"/login"} className="nav-link">
-
-              <button className="btn btn--primary">
-                Se connecter
+            {isAuthenticated && (
+              <div className="relative group">
+                <NavLink
+                  to="/profile"
+                  className={({ isActive }) =>
+                    `nav-link ${isActive ? 'nav-link--active' : ''}`
+                  }
+                >
+                  Profile
+                </NavLink>
+                <div className="absolute hidden group-hover:block bg-white shadow-lg rounded-md mt-2 py-2 w-48">
+                  <NavLink
+                    to="/profile"
+                    className="block px-4 py-2 text-gray-800 hover:bg-gray-200"
+                  >
+                    View Profile
+                  </NavLink>
+                </div>
+              </div>
+            )}
+            {!isAuthenticated ? (
+              <NavLink to="/login" className="nav-link">
+                <button className="btn btn--primary">
+                  Se connecter
+                </button>
+              </NavLink>
+            ) : (
+              <button 
+                className="btn btn--secondary"
+                onClick={() => setIsAuthenticated(false)}
+              >
+                Se déconnecter
               </button>
-            </NavLink>
+            )}
           </nav>
 
           {/* Bouton Hamburger Mobile */}
@@ -135,13 +163,36 @@ export function Header() {
               >
                 Contact
               </NavLink>
-              <NavLink to={"/login"} className="nav-link">
-
-                <button className="btn btn--primary">
-                  Se connecter
+              {isAuthenticated && (
+                <div className="relative">
+                  <NavLink
+                    to="/profile"
+                    onClick={closeMenu}
+                    className={({ isActive }) =>
+                      `nav-link ${isActive ? 'nav-link--active' : ''}`
+                    }
+                  >
+                    Profile
+                  </NavLink>
+                </div>
+              )}
+              {!isAuthenticated ? (
+                <NavLink to="/login" className="nav-link" onClick={closeMenu}>
+                  <button className="btn btn--primary">
+                    Se connecter
+                  </button>
+                </NavLink>
+              ) : (
+                <button 
+                  className="btn btn--secondary"
+                  onClick={() => {
+                    setIsAuthenticated(false);
+                    closeMenu();
+                  }}
+                >
+                  Se déconnecter
                 </button>
-              </NavLink>
-
+              )}
             </nav>
           </div>
 

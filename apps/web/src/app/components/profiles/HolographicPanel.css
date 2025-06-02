@@ -1,0 +1,74 @@
+.holographic-panel {
+    position: relative;
+    border-radius: 12px;
+    padding: 2.5rem;
+    background: rgba(30, 41, 59, 0.5);
+    border: 1px solid rgba(var(--hologram-color, 79, 209, 197), 0.3);
+    box-shadow: 
+      0 0 30px rgba(var(--hologram-color, 79, 209, 197), 0.15),
+      inset 0 0 20px rgba(var(--hologram-color, 79, 209, 197), 0.05);
+    overflow: hidden;
+    transition: all 0.4s ease;
+  }
+  
+  .holographic-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      135deg,
+      rgba(var(--hologram-color, 79, 209, 197), calc(var(--hologram-intensity, 0.1) * 0.3)) 0%,
+      rgba(var(--hologram-color, 79, 209, 197), 0) 20%,
+      rgba(var(--hologram-color, 79, 209, 197), 0) 80%,
+      rgba(var(--hologram-color, 79, 209, 197), calc(var(--hologram-intensity, 0.1) * 0.3)) 100%
+    );
+    pointer-events: none;
+  }
+  
+  .holographic-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      linear-gradient(rgba(var(--hologram-color, 79, 209, 197), 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(var(--hologram-color, 79, 209, 197), 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.3;
+    pointer-events: none;
+  }
+  
+  .holographic-content {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .holographic-panel::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, 
+      transparent, 
+      var(--hologram-color, #4fd1c5), 
+      transparent
+    );
+    animation: panelGlow 3s ease infinite;
+  }
+  
+  @keyframes panelGlow {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 1; }
+  }
+  
+  .holographic-panel:hover {
+    transform: translateY(-8px);
+    box-shadow: 
+      0 15px 40px rgba(var(--hologram-color, 79, 209, 197), 0.25),
+      inset 0 0 20px rgba(var(--hologram-color, 79, 209, 197), 0.1);
+  }
