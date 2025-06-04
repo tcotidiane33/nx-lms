@@ -1,12 +1,11 @@
-import { Body, Controller, Post, Get, Req, UseGuards, Res, HttpCode, HttpStatus } from '@nestjs/common';
+import { Body, Controller, Post, Get, Req, UseGuards, Res, HttpCode, HttpStatus, UnauthorizedException } from '@nestjs/common';
 import { ApiTags, ApiBody, ApiOkResponse, ApiOperation, ApiBearerAuth, ApiUnauthorizedResponse, ApiConflictResponse, ApiCreatedResponse } from '@nestjs/swagger';
 import { AuthService } from './auth.service';
 import { LoginDto } from './dto/login.dto';
 import { RegisterDto } from './dto/register.dto';
-import { AuthGuard } from '@nestjs/passport';
 import { LocalAuthGuard } from '../../guards/local-auth.guard';
 import { JwtAuthGuard } from '../../guards/jwt-auth.guard';
-import { Request, Response } from 'express';
+import type { Request, Response } from 'express';
 import { User } from '../users/entities/user.entity';
 import { LoginResponseDto } from './dto/login-response.dto';
 
@@ -29,6 +28,9 @@ export class AuthController {
     @Req() req: Request,
     @Res({ passthrough: true }) res: Response
   ) {
+    if (!req.user) {
+      throw new UnauthorizedException('User not found');
+    }
     const result = await this.authService.login(req.user);
     
     // Set secure HTTP-only cookie
@@ -66,7 +68,7 @@ export class AuthController {
     return { message: 'Logout successful' };
   }
 
-  @Get('me')
+  @Get('profile')
   @UseGuards(JwtAuthGuard)
   @ApiBearerAuth()
   @ApiOperation({ summary: 'Get current user profile' })

@@ -304,7 +304,7 @@ export namespace Prisma {
   export import Exact = $Public.Exact
 
   /**
-   * Prisma Client JS version: 6.8.2
+   * Prisma Client JS version: 6.8.1
    * Query Engine version: 2060c79ba17c6bb9f5823312b6f6b7f4a845738e
    */
   export type PrismaVersion = {
@@ -1496,6 +1496,7 @@ export namespace Prisma {
     password: string | null
     role: $Enums.UserRole | null
     createdAt: Date | null
+    refreshToken: string | null
   }
 
   export type UserMaxAggregateOutputType = {
@@ -1505,6 +1506,7 @@ export namespace Prisma {
     password: string | null
     role: $Enums.UserRole | null
     createdAt: Date | null
+    refreshToken: string | null
   }
 
   export type UserCountAggregateOutputType = {
@@ -1514,6 +1516,7 @@ export namespace Prisma {
     password: number
     role: number
     createdAt: number
+    refreshToken: number
     _all: number
   }
 
@@ -1525,6 +1528,7 @@ export namespace Prisma {
     password?: true
     role?: true
     createdAt?: true
+    refreshToken?: true
   }
 
   export type UserMaxAggregateInputType = {
@@ -1534,6 +1538,7 @@ export namespace Prisma {
     password?: true
     role?: true
     createdAt?: true
+    refreshToken?: true
   }
 
   export type UserCountAggregateInputType = {
@@ -1543,6 +1548,7 @@ export namespace Prisma {
     password?: true
     role?: true
     createdAt?: true
+    refreshToken?: true
     _all?: true
   }
 
@@ -1625,6 +1631,7 @@ export namespace Prisma {
     password: string
     role: $Enums.UserRole
     createdAt: Date
+    refreshToken: string | null
     _count: UserCountAggregateOutputType | null
     _min: UserMinAggregateOutputType | null
     _max: UserMaxAggregateOutputType | null
@@ -1651,6 +1658,7 @@ export namespace Prisma {
     password?: boolean
     role?: boolean
     createdAt?: boolean
+    refreshToken?: boolean
     courses?: boolean | User$coursesArgs<ExtArgs>
     purchases?: boolean | User$purchasesArgs<ExtArgs>
     progress?: boolean | User$progressArgs<ExtArgs>
@@ -1665,6 +1673,7 @@ export namespace Prisma {
     password?: boolean
     role?: boolean
     createdAt?: boolean
+    refreshToken?: boolean
   }, ExtArgs["result"]["user"]>
 
   export type UserSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -1674,6 +1683,7 @@ export namespace Prisma {
     password?: boolean
     role?: boolean
     createdAt?: boolean
+    refreshToken?: boolean
   }, ExtArgs["result"]["user"]>
 
   export type UserSelectScalar = {
@@ -1683,9 +1693,10 @@ export namespace Prisma {
     password?: boolean
     role?: boolean
     createdAt?: boolean
+    refreshToken?: boolean
   }
 
-  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "email" | "name" | "password" | "role" | "createdAt", ExtArgs["result"]["user"]>
+  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "email" | "name" | "password" | "role" | "createdAt" | "refreshToken", ExtArgs["result"]["user"]>
   export type UserInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     courses?: boolean | User$coursesArgs<ExtArgs>
     purchases?: boolean | User$purchasesArgs<ExtArgs>
@@ -1711,6 +1722,7 @@ export namespace Prisma {
       password: string
       role: $Enums.UserRole
       createdAt: Date
+      refreshToken: string | null
     }, ExtArgs["result"]["user"]>
     composites: {}
   }
@@ -2144,6 +2156,7 @@ export namespace Prisma {
     readonly password: FieldRef<"User", 'String'>
     readonly role: FieldRef<"User", 'UserRole'>
     readonly createdAt: FieldRef<"User", 'DateTime'>
+    readonly refreshToken: FieldRef<"User", 'String'>
   }
     
 
@@ -8203,7 +8216,8 @@ export namespace Prisma {
     name: 'name',
     password: 'password',
     role: 'role',
-    createdAt: 'createdAt'
+    createdAt: 'createdAt',
+    refreshToken: 'refreshToken'
   };
 
   export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
@@ -8386,6 +8400,7 @@ export namespace Prisma {
     password?: StringFilter<"User"> | string
     role?: EnumUserRoleFilter<"User"> | $Enums.UserRole
     createdAt?: DateTimeFilter<"User"> | Date | string
+    refreshToken?: StringNullableFilter<"User"> | string | null
     courses?: CourseListRelationFilter
     purchases?: PurchaseListRelationFilter
     progress?: UserProgressListRelationFilter
@@ -8399,6 +8414,7 @@ export namespace Prisma {
     password?: SortOrder
     role?: SortOrder
     createdAt?: SortOrder
+    refreshToken?: SortOrderInput | SortOrder
     courses?: CourseOrderByRelationAggregateInput
     purchases?: PurchaseOrderByRelationAggregateInput
     progress?: UserProgressOrderByRelationAggregateInput
@@ -8415,6 +8431,7 @@ export namespace Prisma {
     password?: StringFilter<"User"> | string
     role?: EnumUserRoleFilter<"User"> | $Enums.UserRole
     createdAt?: DateTimeFilter<"User"> | Date | string
+    refreshToken?: StringNullableFilter<"User"> | string | null
     courses?: CourseListRelationFilter
     purchases?: PurchaseListRelationFilter
     progress?: UserProgressListRelationFilter
@@ -8428,6 +8445,7 @@ export namespace Prisma {
     password?: SortOrder
     role?: SortOrder
     createdAt?: SortOrder
+    refreshToken?: SortOrderInput | SortOrder
     _count?: UserCountOrderByAggregateInput
     _max?: UserMaxOrderByAggregateInput
     _min?: UserMinOrderByAggregateInput
@@ -8443,6 +8461,7 @@ export namespace Prisma {
     password?: StringWithAggregatesFilter<"User"> | string
     role?: EnumUserRoleWithAggregatesFilter<"User"> | $Enums.UserRole
     createdAt?: DateTimeWithAggregatesFilter<"User"> | Date | string
+    refreshToken?: StringNullableWithAggregatesFilter<"User"> | string | null
   }
 
   export type CourseWhereInput = {
@@ -8767,6 +8786,7 @@ export namespace Prisma {
     password: string
     role?: $Enums.UserRole
     createdAt?: Date | string
+    refreshToken?: string | null
     courses?: CourseCreateNestedManyWithoutTeacherInput
     purchases?: PurchaseCreateNestedManyWithoutUserInput
     progress?: UserProgressCreateNestedManyWithoutUserInput
@@ -8780,6 +8800,7 @@ export namespace Prisma {
     password: string
     role?: $Enums.UserRole
     createdAt?: Date | string
+    refreshToken?: string | null
     courses?: CourseUncheckedCreateNestedManyWithoutTeacherInput
     purchases?: PurchaseUncheckedCreateNestedManyWithoutUserInput
     progress?: UserProgressUncheckedCreateNestedManyWithoutUserInput
@@ -8793,6 +8814,7 @@ export namespace Prisma {
     password?: StringFieldUpdateOperationsInput | string
     role?: EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    refreshToken?: NullableStringFieldUpdateOperationsInput | string | null
     courses?: CourseUpdateManyWithoutTeacherNestedInput
     purchases?: PurchaseUpdateManyWithoutUserNestedInput
     progress?: UserProgressUpdateManyWithoutUserNestedInput
@@ -8806,6 +8828,7 @@ export namespace Prisma {
     password?: StringFieldUpdateOperationsInput | string
     role?: EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    refreshToken?: NullableStringFieldUpdateOperationsInput | string | null
     courses?: CourseUncheckedUpdateManyWithoutTeacherNestedInput
     purchases?: PurchaseUncheckedUpdateManyWithoutUserNestedInput
     progress?: UserProgressUncheckedUpdateManyWithoutUserNestedInput
@@ -8819,6 +8842,7 @@ export namespace Prisma {
     password: string
     role?: $Enums.UserRole
     createdAt?: Date | string
+    refreshToken?: string | null
   }
 
   export type UserUpdateManyMutationInput = {
@@ -8828,6 +8852,7 @@ export namespace Prisma {
     password?: StringFieldUpdateOperationsInput | string
     role?: EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    refreshToken?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type UserUncheckedUpdateManyInput = {
@@ -8837,6 +8862,7 @@ export namespace Prisma {
     password?: StringFieldUpdateOperationsInput | string
     role?: EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    refreshToken?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type CourseCreateInput = {
@@ -9248,6 +9274,7 @@ export namespace Prisma {
     password?: SortOrder
     role?: SortOrder
     createdAt?: SortOrder
+    refreshToken?: SortOrder
   }
 
   export type UserMaxOrderByAggregateInput = {
@@ -9257,6 +9284,7 @@ export namespace Prisma {
     password?: SortOrder
     role?: SortOrder
     createdAt?: SortOrder
+    refreshToken?: SortOrder
   }
 
   export type UserMinOrderByAggregateInput = {
@@ -9266,6 +9294,7 @@ export namespace Prisma {
     password?: SortOrder
     role?: SortOrder
     createdAt?: SortOrder
+    refreshToken?: SortOrder
   }
 
   export type StringWithAggregatesFilter<$PrismaModel = never> = {
@@ -10403,6 +10432,7 @@ export namespace Prisma {
     password: string
     role?: $Enums.UserRole
     createdAt?: Date | string
+    refreshToken?: string | null
     purchases?: PurchaseCreateNestedManyWithoutUserInput
     progress?: UserProgressCreateNestedManyWithoutUserInput
     reviews?: ReviewCreateNestedManyWithoutUserInput
@@ -10415,6 +10445,7 @@ export namespace Prisma {
     password: string
     role?: $Enums.UserRole
     createdAt?: Date | string
+    refreshToken?: string | null
     purchases?: PurchaseUncheckedCreateNestedManyWithoutUserInput
     progress?: UserProgressUncheckedCreateNestedManyWithoutUserInput
     reviews?: ReviewUncheckedCreateNestedManyWithoutUserInput
@@ -10523,6 +10554,7 @@ export namespace Prisma {
     password?: StringFieldUpdateOperationsInput | string
     role?: EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    refreshToken?: NullableStringFieldUpdateOperationsInput | string | null
     purchases?: PurchaseUpdateManyWithoutUserNestedInput
     progress?: UserProgressUpdateManyWithoutUserNestedInput
     reviews?: ReviewUpdateManyWithoutUserNestedInput
@@ -10535,6 +10567,7 @@ export namespace Prisma {
     password?: StringFieldUpdateOperationsInput | string
     role?: EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    refreshToken?: NullableStringFieldUpdateOperationsInput | string | null
     purchases?: PurchaseUncheckedUpdateManyWithoutUserNestedInput
     progress?: UserProgressUncheckedUpdateManyWithoutUserNestedInput
     reviews?: ReviewUncheckedUpdateManyWithoutUserNestedInput
@@ -10703,6 +10736,7 @@ export namespace Prisma {
     password: string
     role?: $Enums.UserRole
     createdAt?: Date | string
+    refreshToken?: string | null
     courses?: CourseCreateNestedManyWithoutTeacherInput
     progress?: UserProgressCreateNestedManyWithoutUserInput
     reviews?: ReviewCreateNestedManyWithoutUserInput
@@ -10715,6 +10749,7 @@ export namespace Prisma {
     password: string
     role?: $Enums.UserRole
     createdAt?: Date | string
+    refreshToken?: string | null
     courses?: CourseUncheckedCreateNestedManyWithoutTeacherInput
     progress?: UserProgressUncheckedCreateNestedManyWithoutUserInput
     reviews?: ReviewUncheckedCreateNestedManyWithoutUserInput
@@ -10768,6 +10803,7 @@ export namespace Prisma {
     password?: StringFieldUpdateOperationsInput | string
     role?: EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    refreshToken?: NullableStringFieldUpdateOperationsInput | string | null
     courses?: CourseUpdateManyWithoutTeacherNestedInput
     progress?: UserProgressUpdateManyWithoutUserNestedInput
     reviews?: ReviewUpdateManyWithoutUserNestedInput
@@ -10780,6 +10816,7 @@ export namespace Prisma {
     password?: StringFieldUpdateOperationsInput | string
     role?: EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    refreshToken?: NullableStringFieldUpdateOperationsInput | string | null
     courses?: CourseUncheckedUpdateManyWithoutTeacherNestedInput
     progress?: UserProgressUncheckedUpdateManyWithoutUserNestedInput
     reviews?: ReviewUncheckedUpdateManyWithoutUserNestedInput
@@ -10823,6 +10860,7 @@ export namespace Prisma {
     password: string
     role?: $Enums.UserRole
     createdAt?: Date | string
+    refreshToken?: string | null
     courses?: CourseCreateNestedManyWithoutTeacherInput
     purchases?: PurchaseCreateNestedManyWithoutUserInput
     reviews?: ReviewCreateNestedManyWithoutUserInput
@@ -10835,6 +10873,7 @@ export namespace Prisma {
     password: string
     role?: $Enums.UserRole
     createdAt?: Date | string
+    refreshToken?: string | null
     courses?: CourseUncheckedCreateNestedManyWithoutTeacherInput
     purchases?: PurchaseUncheckedCreateNestedManyWithoutUserInput
     reviews?: ReviewUncheckedCreateNestedManyWithoutUserInput
@@ -10886,6 +10925,7 @@ export namespace Prisma {
     password?: StringFieldUpdateOperationsInput | string
     role?: EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    refreshToken?: NullableStringFieldUpdateOperationsInput | string | null
     courses?: CourseUpdateManyWithoutTeacherNestedInput
     purchases?: PurchaseUpdateManyWithoutUserNestedInput
     reviews?: ReviewUpdateManyWithoutUserNestedInput
@@ -10898,6 +10938,7 @@ export namespace Prisma {
     password?: StringFieldUpdateOperationsInput | string
     role?: EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    refreshToken?: NullableStringFieldUpdateOperationsInput | string | null
     courses?: CourseUncheckedUpdateManyWithoutTeacherNestedInput
     purchases?: PurchaseUncheckedUpdateManyWithoutUserNestedInput
     reviews?: ReviewUncheckedUpdateManyWithoutUserNestedInput
@@ -10939,6 +10980,7 @@ export namespace Prisma {
     password: string
     role?: $Enums.UserRole
     createdAt?: Date | string
+    refreshToken?: string | null
     courses?: CourseCreateNestedManyWithoutTeacherInput
     purchases?: PurchaseCreateNestedManyWithoutUserInput
     progress?: UserProgressCreateNestedManyWithoutUserInput
@@ -10951,6 +10993,7 @@ export namespace Prisma {
     password: string
     role?: $Enums.UserRole
     createdAt?: Date | string
+    refreshToken?: string | null
     courses?: CourseUncheckedCreateNestedManyWithoutTeacherInput
     purchases?: PurchaseUncheckedCreateNestedManyWithoutUserInput
     progress?: UserProgressUncheckedCreateNestedManyWithoutUserInput
@@ -11004,6 +11047,7 @@ export namespace Prisma {
     password?: StringFieldUpdateOperationsInput | string
     role?: EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    refreshToken?: NullableStringFieldUpdateOperationsInput | string | null
     courses?: CourseUpdateManyWithoutTeacherNestedInput
     purchases?: PurchaseUpdateManyWithoutUserNestedInput
     progress?: UserProgressUpdateManyWithoutUserNestedInput
@@ -11016,6 +11060,7 @@ export namespace Prisma {
     password?: StringFieldUpdateOperationsInput | string
     role?: EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    refreshToken?: NullableStringFieldUpdateOperationsInput | string | null
     courses?: CourseUncheckedUpdateManyWithoutTeacherNestedInput
     purchases?: PurchaseUncheckedUpdateManyWithoutUserNestedInput
     progress?: UserProgressUncheckedUpdateManyWithoutUserNestedInput

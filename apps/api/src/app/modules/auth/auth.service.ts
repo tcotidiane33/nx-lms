@@ -1,5 +1,4 @@
 /* eslint-disable @nx/enforce-module-boundaries */
-
 import {
   Injectable,
   UnauthorizedException,
@@ -27,7 +26,7 @@ export class AuthService {
   async validateUser(email: string, password: string): Promise<Omit<User, 'password'>> {
     const user = await this.prisma.user.findUnique({ 
       where: { email },
-      include: { role: true } // Si vous avez une relation avec les rôles
+      // include: { role: true } // Si vous avez une relation avec les rôles
     });
 
     if (!user) {
@@ -47,7 +46,7 @@ export class AuthService {
     const payload = { 
       sub: user.id, 
       email: user.email, 
-      role: user.role?.name || 'user' 
+      // role: user.role?.name || 'user' 
     };
 
     return {
@@ -66,9 +65,9 @@ export class AuthService {
           email: registerDto.email,
           password: hashedPassword,
           name: registerDto.name,
-          role: { connect: { name: 'user' } }, // Rôle par défaut
+          // role: { connect: { name: 'user' } }, // Rôle par défaut
         },
-        include: { role: true },
+        // include: { role: true },
       });
 
       const { password: _, ...result } = user;
@@ -78,7 +77,7 @@ export class AuthService {
       if (error.code === 'P2002') {
         throw new ConflictException('Email already exists');
       }
-      throw new InternalServerErrorException('Registration failed');
+      throw new InternalServerErrorException('Registration failed 🐞😒🚫');
     }
   }
 
@@ -124,7 +123,7 @@ export class AuthService {
         access_token: this.generateAccessToken({
           sub: user.id,
           email: user.email,
-          role: user.role,
+          //  role: user.role,
         }),
       };
     } catch (error) {

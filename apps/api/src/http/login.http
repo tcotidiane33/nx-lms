@@ -1,0 +1,9 @@
+GET http://localhost:3333/api/auth/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YzQyYjI0ZjQ0YjQ4MjY0YjI4MjQyZCIsImVtYWlsIjoidGVzdHVzZXJAZXhhbXBsZS5jb20iLCJpYXQiOjE2OTI3MjQyMjksImV4cCI6MTY5MjcyNzgyOX0.4-0-3-0-3-0-3-0-3-0-3-0-3-0-3-0-3-0-3-0-3-0-3-0-3-0-3-0-3-0-3-0
+Content-Type: application/json
+
+{
+  "email": "testuser@example.com",
+  "password": "password123",
+  "name": "Test User"
+}

@@ -25,6 +25,7 @@ model User {
   progress  UserProgress[]
   reviews   Review[]
   createdAt DateTime @default(now())
+  refreshToken String?
 }
 
 enum UserRole {
@@ -41,7 +42,7 @@ model Course {
   teacherId   String
   chapters    Chapter[]
   purchases   Purchase[]
-  reviews     Review[]
+  reviews   Review[]
   createdAt   DateTime    @default(now())
 }
 
@@ -86,4 +87,4 @@ model Review {
   comment   String?
   isPublished Boolean @default(false)
   createdAt DateTime @default(now())
-}
+} 

@@ -15,16 +15,17 @@ datasource db {
 }
 
 model User {
-  id        String         @id @default(uuid())
-  email     String         @unique
-  name      String?
-  password  String
-  role      UserRole       @default(STUDENT)
-  courses   Course[]       @relation("TeacherCourses")
-  purchases Purchase[]
-  progress  UserProgress[]
-  reviews   Review[]
-  createdAt DateTime       @default(now())
+  id           String         @id @default(uuid())
+  email        String         @unique
+  name         String?
+  password     String
+  role         UserRole       @default(STUDENT)
+  courses      Course[]       @relation("TeacherCourses")
+  purchases    Purchase[]
+  progress     UserProgress[]
+  reviews      Review[]
+  createdAt    DateTime       @default(now())
+  refreshToken String?
 }
 
 enum UserRole {
