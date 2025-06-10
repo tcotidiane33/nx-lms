@@ -18,12 +18,33 @@ export class ConfigService {
   }
 
   get appName(): string {
-    return this.nestConfigService.get<string>('APP_NAME', 'LMS API');
+    return this.nestConfigService.get<string>('APP_NAME', 'LMS API KONDRONETWORKS');
   }
 
   get nodeEnv(): string {
     return this.nestConfigService.get<string>('NODE_ENV', 'development');
   }
 
-  // Ajoute d'autres getters selon tes besoins
+  get jwtAccessSecret(): string {
+    return this.nestConfigService.get<string>('JWT_ACCESS_SECRET', 'supersecret');
+  }
+
+  get jwtRefreshSecret(): string {
+    return this.nestConfigService.get<string>('JWT_REFRESH_SECRET', 'supersecret');
+  }
+
+  get jwtAccessExpiration(): string {
+    return this.nestConfigService.get<string>('JWT_ACCESS_EXPIRATION', '15m');
+  }
+
+  get jwtRefreshExpiration(): string {
+    return this.nestConfigService.get<string>('JWT_REFRESH_EXPIRATION', '7d');
+  }
+
+  get reactAppApiUrl(): string {
+    return this.nestConfigService.get<string>('REACT_APP_API_URL', 'http://localhost:3333/api');
+  }
+
+  // CISCOS
+
 }
